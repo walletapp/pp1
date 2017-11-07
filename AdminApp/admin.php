@@ -59,6 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- iCheck -->
 <script src="plugins/iCheck/icheck.min.js"></script>
 <script src="bower_components/ckeditor/ckeditor.js"></script>
+<script src="bower_components/notifyJs/notify.js"></script>
 
 <!-- Page Script -->
 <script>
