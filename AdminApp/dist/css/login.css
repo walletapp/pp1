@@ -1,0 +1,133 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 3, 2017, 12:33:02 PM
+    Author     : Alex Donea
+*/
+
+
+/*Login page*/
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #afb5ba;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #afb5ba;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #afb5ba;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #afb5ba;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #afb5ba;
+}
+html{
+    margin:0px;
+}
+
+body{ 
+  background: url("../../images/login-fundal.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin:0;
+
+}
+body{
+    position: relative;
+}
+.container-content-login{
+    position: absolute;
+  top: 50%;
+  transform: translateY(+50%);    
+    margin:auto;
+    background-color:rgba(18,25,33,0.8);
+    
+    border-radius:20px;
+    padding:10px;
+    position:relative;
+   
+    max-width: 400px;
+   
+    
+   
+    
+}
+
+
+.buton-position{
+    width:100%;
+    text-align: center;
+}
+.text-login{
+    color:#6b7580;
+    margin-bottom:10px;
+    
+}
+.input-login{
+    background-color:#040507;
+    border: none;
+    width:100%;
+    padding:10px;
+    border-radius: 8px;
+    color:#6b7580;
+}
+
+
+.logo-login{
+    
+    width:160px;
+}
+
+.buton-login{
+    background-color:#74c374;
+    
+    border:none;
+    width:50%;
+    padding:10px;
+    color:white;
+    border-radius:8px;
+}
+.buton-login:hover{
+     background-color:#99ff99;
+}
+.buton-login:active{
+    background-color:#336633;
+}
+.buton-login:focus{
+   outline: none!important;
+border: none!important;
+}
+
+.input-login:focus{
+   outline: none!important;
+border: none!important;
+background-color:#666666;
+color:#afb5ba;
+font-weight: bold;
+}
+.center-login{
+    width:100%;
+    text-align:center;
+}
+.footer-login{
+    margin-top: 10px;
+    padding:10px;
+    text-align:center;
+    color:white;
+}
+.footer-login a{
+   ;
+    color:#6b7580;
+}
+.footer-login a:hover{
+    color:#66cc66;
+    
+}
