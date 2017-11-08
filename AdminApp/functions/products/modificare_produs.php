@@ -97,7 +97,7 @@
        
       checkifStocPret("btnSubmit","iscorectStoc","#stoc-produse");
       checkifStocPret("btnSubmit","iscorectPret","#pret-produse");
-
+      checkifDenumireProdus("btnSubmit","iscorectDenumire","#nume-produse");
 
 //        $( function() {
 //    $( "#dialog" ).dialog();

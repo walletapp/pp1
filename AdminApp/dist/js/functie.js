@@ -4,7 +4,7 @@ function checkifCategorie(idbtn,idP,input){
     var btnAdd = document.getElementById(idbtn);
     var input1 = input.substr(1);
     var theInput = document.getElementById(input1).value;
-    var matches = theInput.match(/^ [a-z_ ]+$/i);
+    var matches = theInput.match(/^[a-zA-Z_ ]+$/i);
     if(theInput==""){
       iscorect.innerHTML="Campul nu poate fi gol!";
       btnAdd.disabled = true;
@@ -24,7 +24,7 @@ function checkeifDenumire(idbtn,idP,input){
     var btnAdd = document.getElementById(idbtn);
     var input1 = input.substr(1);
     var theInput = document.getElementById(input1).value;
-    var matches = theInput.match(/^ [a-z_ ]+$/i);
+    var matches = theInput.match(/^[a-zA-Z_ ]+$/i);
     if(theInput==""){
       iscorect.innerHTML="Campul nu poate fi gol!";
       btnAdd.disabled = true;
@@ -65,13 +65,10 @@ function checkifDenumireProdus(idbtn,idP,input){
     var btnAdd = document.getElementById(idbtn);
     var input1 = input.substr(1);
     var theInput = document.getElementById(input1).value;
-    var matches = theInput.match(/[0-9]+$/i);
+    // var matches = theInput.match(/^[a-zA-Z_ ]+$/i);
     if(theInput==""){
       iscorect.innerHTML="Campul nu poate fi gol!";
       btnAdd.disabled = true;
-    }else if(matches ==null){
-      btnAdd.disabled = true;
-      iscorect.innerHTML="Doar cifre!(fara spatiu sau caractere speciale)";
     } else {
       btnAdd.disabled = false;
       iscorect.innerHTML="";
