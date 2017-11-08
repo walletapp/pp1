@@ -73,8 +73,6 @@
 
                 <div class="btn-group">
 
-                  <button style="margin-right:10px;" type="button" class="btn btn-default btn-sm"><i class="fa fa-check"></i></button>
-                  <button style="margin-right:10px;" type="button" class="btn btn-default btn-sm"><i class="fa fa-bell-o"></i></button>
                     <button  style="margin-right:10px;" id="delete-btn" type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
                     <button  style="margin-right:10px;" id="refresh-btn" type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                 </div>
@@ -113,16 +111,7 @@
             <!-- /.box-body -->
             <div class="box-footer no-padding">
               <div class="mailbox-controls">
-                <!-- Check all button -->
-                <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
-                </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                </div>
-                <!-- /.btn-group -->
-                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+               
                 <div class="pull-right">
                   <?php echo 'Rezervări totale: <strong>'.$number_of_results.'</strong>';
                       echo '<input type="hidden" id="pagina-principala" value="'.$page.'">'; 
@@ -166,7 +155,13 @@ $('#set_nr_val').text("Rezervări selectate: "+nrArray.length);
                         autoOpen: true,
 			buttons: {
 				"Confirmare": function() {
-					 
+
+					 $('input[name=valori_selectate]:checked').each(function() {
+                                        deleteReserve(this.value);
+});
+                                      
+                                        
+                                               $( this ).dialog( "close" );
 				},
 				Anulare: function() {
 					$( this ).dialog( "close" );
@@ -248,6 +243,28 @@ $('#demo').pagination({
       }
     });
   });
+
+
+        function deleteReserve($var){
+             $.ajax({
+            type: 'POST',
+            url: 'functions/reserve/delete_rezerve.php',
+            data:{"idRezerve":$var},
+            beforeSend: function() { 
+               
+                },
+                success: function(data) {
+                   alert(data);
+                 },
+                error: function(xhr, status, error) {
+                    alert(xhr.responseText);
+},
+                complete: function(data) {
+            // alert(data);
+                },
+                dataType: 'html'
+})
+        }
 
 
 </script>
