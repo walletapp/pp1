@@ -1,7 +1,7 @@
 <?php
 include 'functions/database/databaseConnection.php';
  $interogatieVedere2='select reserveproduct.idReserve,reserveproduct.idUser as "userID",`user`.address as "adresaUser",`user`.phone,`user`.email, `user`.firstName,`user`.lastName, reserveproduct.startDate, reserveproduct.startDateTime,reserveproduct.endDate, reserveproduct.endDate,reserveproduct.endDateTime, reserveproduct.endDateTime2,
-reserveproduct.pretTotal,shop.shopName,shop.address, `status`.denumire_stare as "stare" , reserveproduct.status
+reserveproduct.pretTotal,shop.shopName,shop.address, `status`.denumire_stare as "stare" , reserveproduct.status as "stareProdus1"
 from reserveproduct
 INNER JOIN `user` on reserveproduct.idUser=`user`.userID
 INNER JOIN  shop on reserveproduct.idShop=shop.idShop

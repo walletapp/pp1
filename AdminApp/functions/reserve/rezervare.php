@@ -4,7 +4,7 @@
  $pretTva=0;
  $pretTransport=0;
  $pretFinal=$pretTotal+$pretTva+$pretTransport;
-
+$stare=$row2['stareProdus1'];
  ?>
 <section class="invoice">
     <input type="hidden" id="id-rezervare" value="<?php echo $row2['idReserve']?>">
@@ -81,8 +81,8 @@
       <div class="row">
      <div class="col-xs-6 " style="float:left!important;">
          <?php
-            if($row2['status']=="2"){
-                echo '<label><input id="notificare-client" type="checkbox">&nbsp;Notifică clientul &nbsp;[Mail și notificare Android/IoS]</label>'
+            if($stare=='2'){
+                echo '<label><input id="notificare-client" type="checkbox">&nbsp;Notifică clientul &nbsp;[Mail]</label>'
                 . '<div class="callout callout-success" style="max-width:300px!important;">
                 <h4><i class="fa fa-check" aria-hidden="true"></i> &nbsp;Stare rezervare</h4>
 
@@ -92,7 +92,7 @@
                         . '';
             }
             else{
-                echo '<label><input id="notificare-client" type="checkbox">&nbsp;Notifică clientul &nbsp;[Mail și notificare Android/IoS]</label>';
+                echo '<label><input id="notificare-client" type="checkbox">&nbsp;Notifică clientul &nbsp;[Mail]</label>';
             }
          
          ?>
@@ -129,30 +129,87 @@
         <div class="col-xs-12">
          
            <?php
-            if($row2['status']=="2"){
-                echo ' <button type="button" id="preluare-btn" class="btn btn-success pull-right"><i class="fa fa-check-circle" aria-hidden="true"></i> Rezervare preluată
+            if($stare=='2'){
+                echo ' <button type="button" id="preluare-btn" class="btn btn-success pull-right"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp; Rezervare preluată
+          </button>
+          <button type="button" style="margin-right:16px;" id="comanda-btn" class="btn btn-success pull-right"><i class="fa fa-bell" aria-hidden="true"></i></i>&nbsp; Rezervare pregătită
           </button>'
-                . '<script>document.getElementById("preluare-btn").disabled = true;</script>'
+                
+                . '<script>document.getElementById("preluare-btn").disabled = true;'
+                        . 'document.getElementById("comanda-btn").disabled = true;</script>'
                         . '';
             }
             else{
-                echo '  <button type="button" id="preluare-btn" class="btn btn-success pull-right"><i class="fa fa-check-circle" aria-hidden="true"></i> Rezervare preluată
+                echo '  <button type="button" id="preluare-btn" class="btn btn-success pull-right"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp; Rezervare preluată
+          </button>
+          <button type="button" style="margin-right:16px;" id="comanda-btn" class="btn btn-success pull-right"><i class="fa fa-bell" aria-hidden="true"></i></i>&nbsp; Rezervare pregătită
           </button>';
             }
          
          ?>
             
-        
+            
           
         </div>
       </div>
     </section>
 <div id="dialog-confirm" title="Confirmare preluare">
 	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Doriți să confirmați preluarea?</p>
+</div> 
+<div id="dialog-comanda" title="Confirmare produse">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Doriți să notificați clientul că produsele sunt pregatite de preluar?</p>
 </div>  
 
 	<script>
+            
+            
+            $('#comanda-btn').click(function(){
+                $( "#dialog-comanda" ).dialog({
+			resizable: false,
+			height: "auto",
+			width: 400,
+			modal: true,
+                        autoOpen: true,
+			buttons: {
+				"Confirmare": function() {
+					var titlu="Informatii despre rezervarea cu codul "+$('#id-rezervare').val();
+                                        var message="Rezervarea dumneavoastră este pregătită pentru a fi preluata din magazinul nostru!"
+                                            $.ajax({
+            type: 'POST',
+            url: 'functions/firebase/rezervare_pregatita.php',
+            data:{"message":message,"title":titlu,"idUser":$('#id-user').val()},
+            beforeSend: function() { 
+               
+                },
+                success: function(data) {
+                $.notify("Clientul a fost notificat prin aplicație!",{position:"bottom left",className:"success",gap:"6"});
+                $("#dialog-comanda").dialog( "close" );
+                //alert(data);
+               //  window.location.href='?m=rezervari';
+                 },
+                error: function(xhr, status, error) {
+  alert(xhr.responseText);
+},
+                complete: function(data) {
+              //  alert("complet"+data);
+                },
+                dataType: 'html'
+});
+                                     //   alert("dada");
+                                      
+				},
+				Anulare: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+                
+            });
              $("#dialog-confirm").dialog({
+      autoOpen: false,
+      modal: true
+    });
+     $("#dialog-comanda").dialog({
       autoOpen: false,
       modal: true
     });
