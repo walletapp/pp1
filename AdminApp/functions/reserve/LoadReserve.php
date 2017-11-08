@@ -58,8 +58,9 @@
 
               <div class="box-tools pull-right" style="padding-top: 10px;">
                 <div class="has-feedback" >
-                  <input type="text" class="form-control input-sm" placeholder="Căutare rezervări">
-                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                   
+                  <input type="text" id="cautare-casuta-input" class="form-control input-sm" placeholder="Căutare rezervări">
+                  <button id="cautare-casuta" class="glyphicon glyphicon-search form-control-feedback"></button>
                 </div>
               </div>
               <!-- /.box-tools -->
@@ -266,6 +267,8 @@ $('#demo').pagination({
 })
         }
 
-
+    $('#cautare-casuta').click(function(){
+    window.location.href='?m=rezervari&cautare='+$('#cautare-casuta-input').val();
+    });
 </script>
 

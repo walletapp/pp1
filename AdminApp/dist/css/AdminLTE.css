@@ -5737,3 +5737,12 @@ table.text-center th {
 input[type="file"] {
     display: none;
 }
+
+
+.form-control-feedback{
+    pointer-events: all!important;
+}
+
+.form-group-sm .form-control+.form-control-feedback, .input-group-sm+.form-control-feedback, .input-sm+.form-control-feedback{
+    line-height: 0px!important;
+}
