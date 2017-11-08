@@ -75,8 +75,8 @@
 
                   <button style="margin-right:10px;" type="button" class="btn btn-default btn-sm"><i class="fa fa-check"></i></button>
                   <button style="margin-right:10px;" type="button" class="btn btn-default btn-sm"><i class="fa fa-bell-o"></i></button>
-                    <button  style="margin-right:10px;" id="delete-btn" type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                    <button  style="margin-right:10px;" id="refresh-btn" type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    <button  style="margin-right:10px;" type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                    <button  style="margin-right:10px;" type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                 </div>
                 <!-- /.btn-group -->
 
@@ -140,41 +140,8 @@
     </div>
           <!-- /. box -->
 </div>
-<div id="dialog-stergere" title="Confirmare preluare">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span><p id="set_nr_val">Total produse selectete:0</p>Doriți să confirmați stergerea?</p>
-</div> 
 
 <script>
-     $("#dialog-stergere").dialog({
-      autoOpen: false,
-      modal: true
-    });
-    $('#refresh-btn').click(function(){
-        window.location.reload();
-    });
-    $('#delete-btn').click(function(){
-        var nrArray=new Array();
-   $('input[name=valori_selectate]:checked').each(function() {
-   nrArray.push(this.value); 
-});
-$('#set_nr_val').text("Rezervări selectate: "+nrArray.length);
- $( "#dialog-stergere" ).dialog({
-			resizable: false,
-			height: "auto",
-			width: 400,
-			modal: true,
-                        autoOpen: true,
-			buttons: {
-				"Confirmare": function() {
-					 
-				},
-				Anulare: function() {
-					$( this ).dialog( "close" );
-				}
-			}
-		});
-    
-    });
      loadPaginator($('#total_results').val(),$('#total_numb').val(),$('#pagina-principala').val());
 function loadPaginator(dim,totalnumb,pageNumb){
         // alert('dim='+dim+'  total='+totalnumb+'      actualPage='+pageNumb);

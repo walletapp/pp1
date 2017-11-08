@@ -45,8 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
   <script src="dist/js/pagination.js"></script>
   <script src="dist/js/notify.js"></script>
@@ -62,11 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- iCheck -->
 <script src="plugins/iCheck/icheck.min.js"></script>
 <script src="bower_components/ckeditor/ckeditor.js"></script>
-<<<<<<< HEAD
  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-=======
-<script src="bower_components/notifyJs/notify.js"></script>
->>>>>>> 7d364ab4df3cb7d6a0a1e5c2ee30288932c65da0
 
 <!-- Page Script -->
 <script>
@@ -489,7 +484,7 @@ desired effect
 <!-- jQuery 3 -->
 
 <!-- Bootstrap 3.3.7 -->
-
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="plugins/iCheck/icheck.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>

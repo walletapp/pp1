@@ -98,7 +98,7 @@ while($row= mysqli_fetch_array($rezultat)){
            
             <div class="checkbox icheck">
                         <label>
-                            <input name="valori_selectate" value="'.$row['idReserve'].'" type="checkbox">
+                            <input name="select_all[]" type="checkbox">
                         </label>
                     </div>
                 
