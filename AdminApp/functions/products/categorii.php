@@ -11,7 +11,7 @@
                   <th></th>
                    <th></th>   
                 </tr>
-               <?php include 'showCategory.php'?>
+               <?php include 'showCategory.php';?>
                
               </table>
             </div>
@@ -47,6 +47,7 @@
                             <div id="selectImage">
                                <input  type="hidden" id="id-cat" name="id-cat" value="">
                                <input   style="margin-bottom:10px;" id="valoare-input" type="text" name="valoare-input" class="form-control" value="">
+                               <p id="iscorect">Campul nu poate fi gol!</p>
                               <div class="row">
                                   <div class="col-md-6">
                                 <label for="file" class="btn btn-block btn-default" style="margin-bottom:10px; width:100%;">
@@ -76,7 +77,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Anulare</button>
-                <button type="button" class="btn btn-primary">Adăugă</button>
+                <button type="button" class="btn btn-primary" id="btnAdauga">Adăugă</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -89,12 +90,19 @@
         
         <script>
        
-
     
-
+      
 
     $(document).ready(function (e) {
-       
+        
+
+    checkifCategorie("btnAdauga","iscorect","#valoare-input");
+
+
+
+
+
+
 //        $( function() {
 //    $( "#dialog" ).dialog();
 //  } );
@@ -147,6 +155,28 @@
             //$('#previewing').attr('height', '400px');
         };
     });
+
+
+
+
+    // function checkif(idbtn,idP,input){
+    //    $(input).keyup(function(){
+    //     var iscorect = document.getElementById(idP);
+    //     var btnAdd = document.getElementById(idbtn);
+    //     var theInput = $("#valoare-input").val();
+    //       var matches = theInput.match(/^[a-z_ ]+$/i);
+    //       if(theInput==""){
+    //         iscorect.innerHTML="Campul nu poate fi gol!";
+    //         btnAdd.disabled = true;
+    //       }else if(matches ==null){
+    //         btnAdd.disabled = true;
+    //         iscorect.innerHTML="textul nu poate avea cifre sau caractere speciale";
+    //       }else{
+    //         iscorect.innerHTML="OK";
+    //         btnAdd.disabled = false;
+    //       }
+    //     });
+    //   }
  
 
 </script>

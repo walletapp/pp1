@@ -1,5 +1,5 @@
 
-<?php include 'getProductData.php'?>
+<?php include 'getProductData.php';?>
 <div class="box box-primary">
             <div class="box-header with-border">
                
@@ -14,12 +14,13 @@
                             <div id="selectImage">
                                  
                                 <label>Denumire produs</label> 
+                                <p id="iscorectDenumire" style="float:right"></p>
                                <input   style="margin-bottom:10px;" id="nume-produse" type="text" name="nume-produse" value="<?php echo $rowP['nameProduct']?>" class="form-control">
                                 <label>Categorie produs</label>
                                 
                                  <select class="form-control" name="getIDC" id="getIDC">
                                      <option value="<?php echo $rowProwP['idCategory']?>">Categorie actuală:&nbsp;<?php echo $rowP['categoryName']?></option>
-                                     <option>........................................</option>
+                                     <option disabled="">........................................</option>
                                      <?php 
                                       include 'functions/database/databaseConnection.php';
                                         $bla=$conn->query("select idCategory,categoryName from category") or die ($conn->error);
@@ -37,15 +38,15 @@
                                
                                  <textarea id="editor1" name="editor1" rows="10" cols="80" style="visibility: hidden; display: none;">
                                      <?php echo $rowP['ingrediente']?>
-                                 </textarea>
-                              
+                                 </textarea><br>
+                                
             
                 
               
            
-                                <label>Stoc</label> 
-                                <input   style="margin-bottom:10px;" id="stoc-produse" type="text" name="stoc-produse" class="form-control" value="<?php echo $rowP['stock']?>" >
-                                <label>Preț</label> 
+                                <label>Stoc</label> <p style="float:right" id="iscorectStoc"></p>
+                                <input   style="margin-bottom:10px;" id="stoc-produse" type="text" name="stoc-produse" class="form-control" value="<?php echo $rowP['stock']?>" > 
+                                <label>Preț</label> <p style="float:right" id="iscorectPret"></p>
                                 <input   style="margin-bottom:10px;" id="pret-produse" type="text" name="pret-produse" class="form-control" value="<?php echo $rowP['price']?>">
                                
                              
@@ -59,7 +60,7 @@
                                   </div>
                                
                                   <div class="col-md-6">
-                                      <button   style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
+                                      <button  id="btnSubmit" style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
                                 </button> 
                                   </div>
                               </div>
@@ -94,6 +95,10 @@
 
     $(document).ready(function (e) {
        
+      checkifStocPret("btnSubmit","iscorectStoc","#stoc-produse");
+      checkifStocPret("btnSubmit","iscorectPret","#pret-produse");
+
+
 //        $( function() {
 //    $( "#dialog" ).dialog();
 //  } );

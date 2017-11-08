@@ -51,7 +51,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="dist/js/notify.js"></script>
   <script src="dist/fine_upl/fine-uploader.js"></script>
   <script src="dist/js/SimpleAjaxUploader.js"></script>
+   <script src="dist/js/functie.js"></script>
   <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  
 <!-- FastClick -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
@@ -59,6 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- iCheck -->
 <script src="plugins/iCheck/icheck.min.js"></script>
 <script src="bower_components/ckeditor/ckeditor.js"></script>
+ <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 <!-- Page Script -->
 <script>
