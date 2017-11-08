@@ -62,11 +62,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- iCheck -->
 <script src="plugins/iCheck/icheck.min.js"></script>
 <script src="bower_components/ckeditor/ckeditor.js"></script>
-<<<<<<< HEAD
+
  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-=======
 <script src="bower_components/notifyJs/notify.js"></script>
->>>>>>> 7d364ab4df3cb7d6a0a1e5c2ee30288932c65da0
+
 
 <!-- Page Script -->
 <script>
