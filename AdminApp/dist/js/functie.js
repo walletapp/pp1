@@ -39,42 +39,59 @@ function checkeifDenumire(idbtn,idP,input){
 }
 
 
-function checkifStocPret(idbtn,idP,input){
-  $(input).keyup(function(){
-    var iscorect = document.getElementById(idP);
-    var btnAdd = document.getElementById(idbtn);
-    var input1 = input.substr(1);
-    var theInput = document.getElementById(input1).value;
+function checkifPret(idbtn,idP,input){
+  var theInput = document.getElementById(input).value;
+  var iscorect = document.getElementById(idP);
+  var btnAdd = document.getElementById(idbtn);
+  var matches = /^[^.][\d]*\.?[\d]*$/.test(theInput);
+  if(theInput==""){
+    iscorect.innerHTML="Campul nu poate fi gol!";
+    return 0;
+  }else if(matches ==false){
+    iscorect.innerHTML="Doar cifre si un singur punct.";
+    return 0;
+  } else {
+    iscorect.innerHTML="";
+    return 1;
+  }
 
-    var matches = /^\d+$/.test(theInput);
-    console.log(matches);
-    if(theInput==""){
-      iscorect.innerHTML="Campul nu poate fi gol!";
-      btnAdd.disabled = true;
-    }else if(matches ==false){
-      btnAdd.disabled = true;
-      iscorect.innerHTML="Doar cifre!(fara spatiu sau caractere speciale)";
-    } else {
-      btnAdd.disabled = false;
-      iscorect.innerHTML="";
-    }
-  });
 }
 
+function checkifStoc(idbtn,idP,input){
+  var iscorect = document.getElementById(idP);
+  var btnAdd = document.getElementById(idbtn);
+  var theInput = document.getElementById(input).value;
+  var matches = /^\d+$/.test(theInput);
+  if(theInput==""){
+    iscorect.innerHTML="Campul nu poate fi gol!";
+    // btnAdd.disabled = true;
+    return 0;
+  }else if(matches ==false){
+    iscorect.innerHTML="Doar cifre!(fara spatiu sau caractere speciale)";
+    return 0;
+  } else {
+    // btnAdd.disabled = false;
+    iscorect.innerHTML="";
+    return 1;
+  }
+}
+
+
+
 function checkifDenumireProdus(idbtn,idP,input){
-  $(input).keyup(function(){
+  
     var iscorect = document.getElementById(idP);
     var btnAdd = document.getElementById(idbtn);
-    var input1 = input.substr(1);
-    var theInput = document.getElementById(input1).value;
-    var matches = theInput.match(/^[a-zA-Z_ ]+$/i);
+    var theInput = document.getElementById(input).value;
+    // var matches = theInput.match(/^[a-zA-Z_ ]/i);
     if(theInput==""){
       iscorect.innerHTML="Campul nu poate fi gol!";
-      btnAdd.disabled = true;
+      // btnAdd.disabled = true;
+      return 0;
     } else {
-      btnAdd.disabled = false;
       iscorect.innerHTML="";
+      // btnAdd.disabled = false;
+      return 1;
     }
-  });
 }
 
