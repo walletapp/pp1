@@ -52,14 +52,14 @@
                            <form id="uploadimage2" action="" method="post" enctype="multipart/form-data">
                             <div id="selectImage">
                                  
-                                <label>Denumire produs</label> 
+                                <label>Denumire produs</label> <p id="iscorectDenumire" style="float:right">Campul nu poate fi gol!</p>
                                <input   style="margin-bottom:10px;" id="nume-produse" type="text" name="nume-produse" class="form-control">
                                 <label>Categorie produs</label>
                                 
                                  <select class="form-control" name="getIDC" id="getIDC">
                                      <?php 
                                       include 'functions/database/databaseConnection.php';
-                                        $bla=$conn->query("select idCategory,categoryName from category") or die ($conn->error);
+                                        $bla=$conn->query("select idCategory,categoryName from category where not idCategory = 0") or die ($conn->error);
                                         while($rrow= mysqli_fetch_array($bla)){
                                             echo "<option value=\"".$rrow['idCategory']."\">".$rrow['categoryName']."</option>";
                                         }
@@ -78,9 +78,9 @@
                 
               
            
-                                <label>Stoc</label> 
+                                <label>Stoc</label>  <p id="iscorectStoc" style="float:right">Campul nu poate fi gol!</p>
                                <input   style="margin-bottom:10px;" id="stoc-produse" type="text" name="stoc-produse" class="form-control" >
-                                <label>Preț</label> 
+                                <label>Preț</label> <p id="iscorectPret" style="float:right">Campul nu poate fi gol!</p>
                                <input   style="margin-bottom:10px;" id="pret-produse" type="text" name="pret-produse" class="form-control" >
                                
                              
@@ -114,7 +114,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Anulare</button>
-                <button type="button" class="btn btn-primary">Adăugă</button>
+                <button id="btnSubmit" type="button" class="btn btn-primary" disabled="">Adăugă</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -137,9 +137,38 @@
 
     $(document).ready(function (e) {
        
-//        $( function() {
-//    $( "#dialog" ).dialog();
-//  } );
+function checkFlag(){
+        var thestoc = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
+        var theprice = checkifPret("btnSubmit","iscorectPret","pret-produse");
+        var thename = checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
+        if (thestoc == 1 && theprice == 1 && thename == 1) {
+          document.getElementById("btnSubmit").disabled = false;
+        } else {
+          document.getElementById("btnSubmit").disabled = true;
+        }
+      }
+
+      $("#stoc-produse").keyup(function(){
+        var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
+        // console.log(var1);
+        checkFlag();
+    });
+
+
+      $("#pret-produse").keyup(function(){
+        var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
+        // console.log(var2);
+        checkFlag();
+      });
+
+      $("#nume-produse").keyup(function(){
+        checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
+        checkFlag();
+      });
+
+
+
+
         $("#uploadimage2").on('submit',(function(e) {
             e.preventDefault();
             $("#message2").empty();

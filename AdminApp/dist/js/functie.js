@@ -95,3 +95,21 @@ function checkifDenumireProdus(idbtn,idP,input){
     }
 }
 
+
+function checkContentProdus (idbtn,idP,input){
+  var iscorect = document.getElementById(idP);
+  var btnAdd = document.getElementById(idbtn);
+  var theInput = CKEDITOR.instances[input].getData();
+  if(theInput==""){
+      iscorect.innerHTML="Campul nu poate fi gol!";
+      // btnAdd.disabled = true;
+      console.log("0");
+      return 0;
+    } else {
+      iscorect.innerHTML="";
+      // btnAdd.disabled = false;
+      console.log("!");
+      return 1;
+    }
+}
+
