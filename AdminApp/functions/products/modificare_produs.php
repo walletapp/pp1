@@ -94,10 +94,34 @@
 
 
     $(document).ready(function (e) {
-       
-      checkifStocPret("btnSubmit","iscorectStoc","#stoc-produse");
-      checkifStocPret("btnSubmit","iscorectPret","#pret-produse");
-      checkifDenumireProdus("btnSubmit","iscorectDenumire","#nume-produse");
+      
+      function checkFlag(){
+        var thestoc = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
+        var theprice = checkifPret("btnSubmit","iscorectPret","pret-produse");
+        var thename = checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
+        if (thestoc == 1 && theprice == 1 && thename == 1) {
+          document.getElementById("btnSubmit").disabled = false;
+        } else {
+          document.getElementById("btnSubmit").disabled = true;
+        }
+      }
+
+      $("#stoc-produse").keyup(function(){
+        var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
+        // console.log(var1);
+        checkFlag();
+    });
+
+      $("#pret-produse").keyup(function(){
+        var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
+        // console.log(var2);
+        checkFlag();
+      });
+
+      $("#nume-produse").keyup(function(){
+        checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
+        checkFlag();
+      });
 
 //        $( function() {
 //    $( "#dialog" ).dialog();
