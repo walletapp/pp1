@@ -1,4 +1,4 @@
-<?php include 'getCategorieData.php'?> 
+<?php include 'getCategorieData.php';?> 
 <!--<div id="dialog" title="Basic dialog">
   <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
 </div>-->
@@ -14,7 +14,7 @@
     <div class="box-body">                 
               
                     <div class="form-group" >                  
-                        <label>Denumire categorie</label>                           
+                        <label>Denumire categorie</label> <p id="iscorectDenumire" style="float:right;margin: 0px;"></p>                      
                            <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
                             <div id="selectImage">
                                <input  type="hidden" id="id-cat" name="id-cat" value="<?php echo $_GET['id'];?>">
@@ -28,7 +28,7 @@
                                   </div>
                                
                                   <div class="col-md-6">
-                                      <button   style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
+                                      <button id="btnSubmit"  style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
                                 </button> 
                                   </div>
                                                       </div>
@@ -94,9 +94,11 @@
 
 
     $(document).ready(function (e) {
-//        $( function() {
-//    $( "#dialog" ).dialog();
-//  } );
+
+      $("#valoare-input").keyup(function(){
+        checkifDenumireProdus("btnSubmit","iscorectDenumire","valoare-input");
+      });
+
         $("#uploadimage").on('submit',(function(e) {
             e.preventDefault();
             $("#message").empty();
