@@ -25,6 +25,9 @@ function switchMenuShow($val){
          case "modificare_produs":
         require_once 'functions/products/modificare_produs.php';
             break;
+         case "newsletter":
+        require_once 'functions/marketing/newsletter.php';
+            break;
     }
     
 }
