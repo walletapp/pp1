@@ -24,17 +24,9 @@
                 </div>  
                 <!-- /.pull-right -->
               </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 <button style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default">Trimite</button>
-=======
-                <input  style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default" value="Trimite newsletter">
->>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
-=======
-                <input  style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default" value="Trimite newsletter">
->>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
             
-                                     
                                 
               <!-- /.mail-box-messages -->
             </div>
@@ -64,8 +56,7 @@
   });
 
     
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   $('#trimite-buton').click(function(){
     var var1 = checkifDenumireProdus("trimite-buton","iscorectTitlu","titlu-news");
     var var2 = 0;
@@ -79,13 +70,10 @@
         }
   }
   });
-=======
-   
->>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
-=======
-   
->>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
- $(function () {
+  
+  
+
+  $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
      $("#dialog-newsletter").dialog({
@@ -94,10 +82,8 @@
     });
     CKEDITOR.replace('editor1');
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //bootstrap WYSIHTML5 - text editor
-=======
+
+
      $('#trimite-buton').click(function(){
          
              $( "#dialog-newsletter" ).dialog({
@@ -150,10 +136,8 @@
          return false;
        
     });
- 
->>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
-    </script>
-=======
+
+
      $('#trimite-buton').click(function(){
          
              $( "#dialog-newsletter" ).dialog({
@@ -208,4 +192,3 @@
     });
  
     </script>
->>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
