@@ -23,7 +23,7 @@
             <div class="inner">
               <h3><?php echo $rowStatistics['report']?></h3>
 
-              <p>Utilizatori nemultumiri/feedback</p>
+              <p>Raport/Feedback</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -217,7 +217,7 @@
         
     </div>
            <div class="col-md-4">
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
@@ -233,7 +233,7 @@
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
@@ -249,7 +249,7 @@
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
@@ -265,7 +265,7 @@
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
@@ -281,7 +281,7 @@
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
@@ -297,7 +297,7 @@
             </div>
             <!-- /.info-box-content -->
           </div>
-                <div class="info-box bg-yellow">
+                <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
