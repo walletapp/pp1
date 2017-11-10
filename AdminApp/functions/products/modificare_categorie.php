@@ -67,6 +67,8 @@
 </div>
 </div>
 <script>
+
+
     $('#submit-update').click(function(){
         alert($('#valoare-input').val());
         $.ajax({
@@ -95,30 +97,43 @@
 
     $(document).ready(function (e) {
 
+
+
+
       $("#valoare-input").keyup(function(){
         checkifDenumireProdus("btnSubmit","iscorectDenumire","valoare-input");
       });
 
-        $("#uploadimage").on('submit',(function(e) {
-            e.preventDefault();
-            $("#message").empty();
-            $('#loading').show();
-            $.ajax({
-                url: "functions/images/ajax_php_file.php", // Url to which the request is send
-                type: "POST",             // Type of request to be send, called as method
-                data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-                contentType: false,       // The content type used when sending data to the server.
-                cache: false,             // To unable request pages to be cached
-                processData:false,        // To send DOMDocument or non processed data file it is set to false
-                success: function(data)   // A function to be called if request succeeds
-                {
-                    $('#loading').hide();
-                    $("#message").html(data);
-                }
-            });
-        }));
 
-// Function to preview image after validation
+
+      $("#btnSubmit").click(function(e){
+
+        if($("#valoare-input").val()==""){
+          e.preventDefault();
+          alert("Denumire nasoala");
+        }else{
+
+          $("#uploadimage").on('submit',(function(e) {
+              e.preventDefault();
+              $("#message").empty();
+              $('#loading').show();
+              $.ajax({
+                  url: "functions/images/ajax_php_file.php", // Url to which the request is send
+                  type: "POST",             // Type of request to be send, called as method
+                  data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+                  contentType: false,       // The content type used when sending data to the server.
+                  cache: false,             // To unable request pages to be cached
+                  processData:false,        // To send DOMDocument or non processed data file it is set to false
+                  success: function(data)   // A function to be called if request succeeds
+                  {
+                      $('#loading').hide();
+                      $("#message").html(data);
+                  }
+              });
+          }));
+        }
+      });
+
         $(function() {
             $("#file").change(function() {
                 $("#message").empty(); // To remove the previous error message
