@@ -24,7 +24,7 @@
                 </div>  
                 <!-- /.pull-right -->
               </div>
-                <button style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default">Default</button>
+                <input  style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default" value="Trimite newsletter">
             
                                      
                                 
@@ -37,16 +37,73 @@
           </div>
     </div>
 </div>
+<div id="dialog-newsletter" title="Confirmare newsletter">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span><p id="set_nr_val">Atentie! Se va trimite mail la toti clienti inregistrați!
+</div> 
 
 <script>
     
-    $('#trimite-buton').click(function(){
-        alert($('#titlu-news').val()+"    "+$('#editor1').val());
-    });
+   
  $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
+     $("#dialog-newsletter").dialog({
+      autoOpen: false,
+      modal: true
+    });
     CKEDITOR.replace('editor1');
     });
-    //bootstrap WYSIHTML5 - text editor
+     $('#trimite-buton').click(function(){
+         
+             $( "#dialog-newsletter" ).dialog({
+			resizable: false,
+			height: "auto",
+			width: 400,
+			modal: true,
+                        autoOpen: true,
+			buttons: {
+				"Confirmare": function(e) {
+                                   
+					
+                                            $.ajax({
+            type: 'POST',
+            url: 'functions/phpMailer/mail_clienti.php',
+            data:{"message":CKEDITOR.instances['editor1'].getData(),"title":$('#titlu-news').val()},
+           beforeSend: function() { 
+                $("#dialog-newsletter").dialog( "close" );
+                },
+                success: function(data) {
+               
+               
+                alert(data);
+               
+                 },
+                error: function(xhr, status, error) {
+  alert(xhr.responseText);
+},
+                complete: function(data) {
+                alert("complet"+data);
+              
+    },
+                dataType: 'html'
+});
+                                     //   alert("dada");
+                                      
+				},
+				Anulare: function() {
+					$( this ).dialog( "close" );
+				}
+                                
+			}
+		});
+         
+         
+         
+         
+         
+   
+         return false;
+       
+    });
+ 
     </script>
