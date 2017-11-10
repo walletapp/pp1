@@ -8,6 +8,7 @@ else{
     header('Location: index_2.php');
 }
 include 'functions/includes/variables.php';
+
 ?>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -140,18 +141,18 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class=" skin-blue sidebar-mini  fixed">
 <div class="wrapper">
 
   <!-- Main Header -->
   <header class="main-header">
       
     <!-- Logo -->
-    <a href="index_2.php" class="logo">
+    <a href="admin.php?m=acasa&a=activ1" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Debbie's</b>Yogurt</span>
+      <span class="logo-lg"><b>Admin</b> panel</span>
     </a>
 
     <!-- Header Navbar -->
@@ -165,7 +166,7 @@ desired effect
 -->        <ul class="nav navbar-nav"><!--
            Messages: style can be found in dropdown.less
 -->             <li class="dropdown messages-menu">
-    <a href="logout.php">Deconectare</a>
+    <a href="logout.php"><i class="ion ion-android-exit"></i>&nbsp;Deconectare</a>
 </li><!--
     
              Menu toggle button 
@@ -334,7 +335,7 @@ desired effect
       </div>-->
 
       <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
+<!--      <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -342,7 +343,7 @@ desired effect
               </button>
             </span>
         </div>
-      </form>
+      </form>-->
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
@@ -494,7 +495,6 @@ desired effect
 
 <script src="plugins/iCheck/icheck.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
 <script>
     $(function () {
         $('input').iCheck({

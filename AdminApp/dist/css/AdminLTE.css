@@ -5158,7 +5158,7 @@ table.text-center th {
 .alert-info,
 .label-info,
 .modal-info .modal-body {
-  background-color: #00c0ef !important;
+  background-color: #74c374 !important;
 }
 .bg-blue {
   background-color: #0073b7 !important;
@@ -5173,7 +5173,7 @@ table.text-center th {
 .alert-success,
 .label-success,
 .modal-success .modal-body {
-  background-color: #00a65a !important;
+  background-color: #74c374 !important;
 }
 .bg-navy {
   background-color: #001f3f !important;

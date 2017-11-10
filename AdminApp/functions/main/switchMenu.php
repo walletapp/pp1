@@ -31,6 +31,9 @@ function switchMenuShow($val){
          case "acasa":
         require_once 'functions/statistics/home.php';
             break;
+         default:
+        require_once 'functions/statistics/home.php';
+            break;
     }
     
 }

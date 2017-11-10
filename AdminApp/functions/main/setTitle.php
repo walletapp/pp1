@@ -36,16 +36,16 @@ function setTitle($val){
 function switchNavigation($val){
     switch($val){
          case "acasa":
-            return '<li><a href="?m=acasa"><i class="fa fa-home"></i> Acasă</a></li>
+            return '<li><a href="?m=acasa&a=activ1"><i class="fa fa-home"></i> Acasă</a></li>
         <li class="active">Statistici generale</li>';
             break;
         case "rezervari":
-            return '<li><a href="?m=rezervari"><i class="fa fa-home"></i> Acasă</a></li>
+            return '<li><a href="?m=rezervari&b=activ2"><i class="fa fa-home"></i> Acasă</a></li>
         <li class="active">Rezervări</li>';
             break;
         case "rezervare":
-            return '<li><a href="?m=rezervari"><i class="fa fa-home"></i> Acasă</a></li>
-        <li class="active"><a href="?m=rezervari">Rezervări</a></li>
+            return '<li><a href="?m=rezervari&b=activ2"><i class="fa fa-home"></i> Acasă</a></li>
+        <li class="active"><a href="?m=rezervari&b=activ2">Rezervări</a></li>
         <li class="active">Vedere rezervare</li>';
             break;
         case "gestiune":
@@ -53,13 +53,13 @@ function switchNavigation($val){
             break;
         case "modificare_categorie":
             return '
-            <li class="active"><a href="?m=gestiune">Management categorii și produse</a></li>
+            <li class="active"><a href="?m=gestiune&c=activ3">Management categorii și produse</a></li>
             <li class="active">Modificare categorie</a></li>
             ';
             break;
         case "modificare_produs":
             return '
-            <li class="active"><a href="?m=gestiune">Management categorii și produse</a></li>
+            <li class="active"><a href="?m=gestiune&c=activ3">Management categorii și produse</a></li>
             <li class="active">Modificare produs</a></li>
             ';
             break;
