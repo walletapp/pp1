@@ -25,7 +25,11 @@
                 <!-- /.pull-right -->
               </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <button style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default">Trimite</button>
+=======
+                <input  style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default" value="Trimite newsletter">
+>>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
 =======
                 <input  style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default" value="Trimite newsletter">
 >>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
@@ -61,6 +65,7 @@
 
     
 <<<<<<< HEAD
+<<<<<<< HEAD
   $('#trimite-buton').click(function(){
     var var1 = checkifDenumireProdus("trimite-buton","iscorectTitlu","titlu-news");
     var var2 = 0;
@@ -77,6 +82,9 @@
 =======
    
 >>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
+=======
+   
+>>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
  $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
@@ -87,7 +95,63 @@
     CKEDITOR.replace('editor1');
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
     //bootstrap WYSIHTML5 - text editor
+=======
+     $('#trimite-buton').click(function(){
+         
+             $( "#dialog-newsletter" ).dialog({
+			resizable: false,
+			height: "auto",
+			width: 400,
+			modal: true,
+                        autoOpen: true,
+			buttons: {
+				"Confirmare": function(e) {
+                                   
+					
+                                            $.ajax({
+            type: 'POST',
+            url: 'functions/phpMailer/mail_clienti.php',
+            data:{"message":CKEDITOR.instances['editor1'].getData(),"title":$('#titlu-news').val()},
+           beforeSend: function() { 
+                $("#dialog-newsletter").dialog( "close" );
+                },
+                success: function(data) {
+                alert(data);
+               
+                alert(data);
+               
+                 },
+                error: function(xhr, status, error) {
+  //alert(xhr.responseText);
+},
+                complete: function(data) {
+              //  alert(data);
+              
+    },
+                dataType: 'html'
+});
+                                     //   alert("dada");
+                                      
+				},
+				Anulare: function() {
+					$( this ).dialog( "close" );
+				}
+                                
+			}
+		});
+         
+         
+         
+         
+         
+   
+         return false;
+       
+    });
+ 
+>>>>>>> 65111275b4e066608e2c08e9d6b09c0c7e4310c2
     </script>
 =======
      $('#trimite-buton').click(function(){
