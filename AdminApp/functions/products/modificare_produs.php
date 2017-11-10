@@ -31,7 +31,7 @@
                                       
                         
                                 </select>
-                                 <label>Ingrediente</label>               
+                                 <label>Ingrediente</label>  <p style="float:right" id="iscorectEdit"></p>             
                                 
                                
                                
@@ -111,6 +111,9 @@
         // console.log(var1);
         checkFlag();
     });
+
+      // var editorrr = CKEDITOR.instances.editor1;
+      // editorrr.on("keyup",function(){});
 
       $("#pret-produse").keyup(function(){
         var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");

@@ -77,7 +77,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Anulare</button>
-                <button type="button" class="btn btn-primary" id="btnAdauga">Adăugă</button>
+                <button type="button" class="btn btn-primary" id="btnAdauga" disabled="">Adăugă</button>
               </div>
             </div>
             <!-- /.modal-content -->
