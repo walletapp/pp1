@@ -358,3 +358,15 @@ error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify faile
 2017-11-10 09:37:38 - Connection failed. Error #2: stream_socket_client(): Failed to enable crypto [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
 2017-11-10 09:37:38 - Connection failed. Error #2: stream_socket_client(): unable to connect to ssl://mail.debbies.ro:465 (Unknown error) [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
 2017-11-10 09:37:38 - SMTP ERROR: Failed to connect to server:  (0)
+2017-11-10 09:45:38 - Connection: opening to ssl://mail.debbies.ro:465, timeout=300, options=array()
+2017-11-10 09:45:39 - Connection failed. Error #2: stream_socket_client(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
+2017-11-10 09:45:39 - Connection failed. Error #2: stream_socket_client(): Failed to enable crypto [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
+2017-11-10 09:45:39 - Connection failed. Error #2: stream_socket_client(): unable to connect to ssl://mail.debbies.ro:465 (Unknown error) [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
+2017-11-10 09:45:39 - SMTP ERROR: Failed to connect to server:  (0)
+2017-11-10 09:45:39 - Connection: opening to ssl://mail.debbies.ro:465, timeout=300, options=array()
+2017-11-10 09:45:39 - Connection failed. Error #2: stream_socket_client(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
+2017-11-10 09:45:39 - Connection failed. Error #2: stream_socket_client(): Failed to enable crypto [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
+2017-11-10 09:45:39 - Connection failed. Error #2: stream_socket_client(): unable to connect to ssl://mail.debbies.ro:465 (Unknown error) [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
+2017-11-10 09:45:39 - SMTP ERROR: Failed to connect to server:  (0)

@@ -28,6 +28,9 @@ function switchMenuShow($val){
          case "newsletter":
         require_once 'functions/marketing/newsletter.php';
             break;
+         case "acasa":
+        require_once 'functions/statistics/home.php';
+            break;
     }
     
 }

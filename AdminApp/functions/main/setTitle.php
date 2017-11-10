@@ -24,6 +24,9 @@ function setTitle($val){
         case "modificare_produs":
             return "Modificare produs";
             break;
+         case "acasa":
+            return "Statistici generale";
+            break;
     }
 
 }
@@ -32,6 +35,10 @@ function setTitle($val){
 
 function switchNavigation($val){
     switch($val){
+         case "acasa":
+            return '<li><a href="?m=acasa"><i class="fa fa-home"></i> Acasă</a></li>
+        <li class="active">Statistici generale</li>';
+            break;
         case "rezervari":
             return '<li><a href="?m=rezervari"><i class="fa fa-home"></i> Acasă</a></li>
         <li class="active">Rezervări</li>';

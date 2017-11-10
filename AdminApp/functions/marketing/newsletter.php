@@ -2,7 +2,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="box box-primary" style="padding:20px;">
             <div class="box-header with-border" style="padding-top: 20px; padding-bottom: 20px;">
-              <h3 class="box-title">Newsletter rezervări</h3>
+              <h3 class="box-title">Newsletter</h3>
 
              
               <!-- /.box-tools -->
@@ -24,7 +24,7 @@
                 </div>  
                 <!-- /.pull-right -->
               </div>
-                <input  style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default" value="Trimite newsletter">
+                <button  style="width:200px;" id="trimite-buton" type="button" class="btn btn-block btn-default"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Trimite</button
             
                                      
                                 
