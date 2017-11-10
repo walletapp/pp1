@@ -7,7 +7,7 @@
 	require 'classes/PHPMailer/PHPMailer.php';
 	require 'classes/PHPMailer/SMTP.php';
 	
-        $delay=0.5;
+      
 		mailClienti($_POST['title'], designMail($_POST['title'],$_POST['message']),$conn);
      $varMail="";
 function mailClienti($subject, $message,$mysqli){
@@ -29,7 +29,7 @@ function mailClienti($subject, $message,$mysqli){
 			//$sql = $mysqli->query('SELECT email FROM absolventi WHERE email!="" and cod_specializare='.$cod_specializare.';');
 			$sql = $mysqli->query('SELECT email from user WHERE email!=""');
 			if(mysqli_num_rows($sql)>0) {
-			
+			   $delay=0.5;
 				$stack = array();
 				$group = 0;
 				
@@ -197,8 +197,8 @@ function mailClienti($subject, $message,$mysqli){
             <div class="continutMail">
                 <div class="continutText">
                     <div class="textHeader">
-                        '.$titlu.'
-                    </div>
+                      <h2>  '.$titlu.'
+</h2>                    </div>
                     '.$mesaj.'
                 </div>
                 
