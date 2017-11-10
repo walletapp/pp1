@@ -42,80 +42,60 @@
 
 <script>
 
-  
-
-  $("#editorrrul").click(function(){
-    alert(CKEDITOR.instances.editor1.getData());
-  });
-
- 
-
   $("#titlu-news").keyup(function(){
     checkifDenumireProdus("trimite-buton","iscorectTitlu","titlu-news");
 
   });
 
-    
-
-
-  
-  
   $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
      $("#dialog-newsletter").dialog({
       autoOpen: false,
       modal: true
     });
     CKEDITOR.replace('editor1');
-    });
-
-
-     $('#trimite-buton').click(function(e){
-         
-             $( "#dialog-newsletter" ).dialog({
-			resizable: false,
-			height: "auto",
-			width: 400,
-			modal: true,
-                        autoOpen: true,
-			buttons: {
-				"Confirmare": function() {
-                                   
-					
-                                            $.ajax({
-            type: 'POST',
-            url: 'functions/phpMailer/mail_clienti.php',
-            data:{"message":CKEDITOR.instances['editor1'].getData(),"title":$('#titlu-news').val()},
-           beforeSend: function() { 
-                $("#dialog-newsletter").dialog( "close" );
+  });  
+  
+  $('#trimite-buton').click(function(e){
+    if($("#titlu-news").val()==""){
+      console.log("titlul nu poate fi gol");
+    }else{
+      if(CKEDITOR.instances.editor1.getData()==""){
+      console.log("mesaj gol!");
+      }else{
+        $( "#dialog-newsletter" ).dialog({
+          resizable: false,
+          height: "auto",
+          width: 400,
+          modal: true,
+          autoOpen: true,
+          buttons: {
+            "Confirmare": function() {
+              $.ajax({
+                type: 'POST',
+                url: 'functions/phpMailer/mail_clienti.php',
+                data:{"message":CKEDITOR.instances['editor1'].getData(),"title":$('#titlu-news').val()},
+                beforeSend: function() { 
+                  $("#dialog-newsletter").dialog( "close" );
                 },
                 success: function(data) {
-                alert(data);
+                  alert(data);
                 },
                 error: function(xhr) {
-               // alert(xhr.responseText);
+                  // alert(xhr.responseText);
                 },
                 complete: function(data) {
-              //  alert(data);             
+                  // alert(data);             
+                }
+              });
+            },
+            Anulare: function() {
+              $( this ).dialog( "close" );
+            }
+          }
+        });
+      }
     }
-});
-                                    
-                                      
-				},
-				Anulare: function() {
-					$( this ).dialog( "close" );
-				}
-                                
-			}
-		});   
-         
-         
-         
-         
-   
-     
-       
-    });
+    
+  });
 
     </script>
