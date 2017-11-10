@@ -47,7 +47,6 @@
                             <div id="selectImage">
                                <input  type="hidden" id="id-cat" name="id-cat" value="">
                                <input   style="margin-bottom:10px;" id="valoare-input" type="text" name="valoare-input" class="form-control" value="">
-                               <p id="iscorect">Campul nu poate fi gol!</p>
                               <div class="row">
                                   <div class="col-md-6">
                                 <label for="file" class="btn btn-block btn-default" style="margin-bottom:10px; width:100%;">
@@ -57,7 +56,7 @@
                                   </div>
                                
                                   <div class="col-md-6">
-                                      <button   style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
+                                      <button  id="btnSubmit" style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
                                 </button> 
                                   </div>
                                                       </div>
@@ -77,7 +76,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Anulare</button>
-                <button type="button" class="btn btn-primary" id="btnAdauga" disabled="">Adăugă</button>
+                <!-- <button type="button" class="btn btn-primary" id="btnAdauga">Adăugă</button> -->
               </div>
             </div>
             <!-- /.modal-content -->
@@ -94,36 +93,36 @@
       
 
     $(document).ready(function (e) {
+      
+
+
+      $("#btnSubmit").click(function(e){
         
-
-    checkifCategorie("btnAdauga","iscorect","#valoare-input");
-
-
-
-
-
-
-//        $( function() {
-//    $( "#dialog" ).dialog();
-//  } );
+        if($("#valoare-input").val()==""){
+          e.preventDefault();
+          alert("nu ie bine");
+        }else {
         $("#uploadimage").on('submit',(function(e) {
             e.preventDefault();
             $("#message").empty();
             $('#loading').show();
             $.ajax({
-                url: "functions/images/adaugare_categorie_upload.php", // Url to which the request is send
-                type: "POST",             // Type of request to be send, called as method
-                data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-                contentType: false,       // The content type used when sending data to the server.
-                cache: false,             // To unable request pages to be cached
-                processData:false,        // To send DOMDocument or non processed data file it is set to false
-                success: function(data)   // A function to be called if request succeeds
-                {
-                    $('#loading').hide();
-                    $("#message").html(data);
-                }
-            });
-        }));
+              url: "functions/images/adaugare_categorie_upload.php", // Url to which the request is send
+              type: "POST",             // Type of request to be send, called as method
+              data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+              contentType: false,       // The content type used when sending data to the server.
+              cache: false,             // To unable request pages to be cached
+              processData:false,        // To send DOMDocument or non processed data file it is set to false
+              success: function(data)   // A function to be called if request succeeds
+              {
+                $('#loading').hide();
+                $("#message").html(data);
+              }});
+            alert("send??");
+          }));
+       }
+     });
+        
 
 // Function to preview image after validation
         $(function() {
@@ -146,6 +145,7 @@
                 }
             });
         });
+        
         function imageIsLoaded(e) {
             $("#file").css("color","green");
             $('#image_preview').css("display", "block");

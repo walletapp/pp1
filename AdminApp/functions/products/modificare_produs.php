@@ -23,7 +23,7 @@
                                      <option disabled="">........................................</option>
                                      <?php 
                                       include 'functions/database/databaseConnection.php';
-                                        $bla=$conn->query("select idCategory,categoryName from category") or die ($conn->error);
+                                        $bla=$conn->query("select idCategory,categoryName from category where NOT idCategory = 0") or die ($conn->error);
                                         while($rrow= mysqli_fetch_array($bla)){
                                             echo "<option value=\"".$rrow['idCategory']."\">".$rrow['categoryName']."</option>";
                                         }
@@ -108,28 +108,36 @@
 
       $("#stoc-produse").keyup(function(){
         var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
-        // console.log(var1);
-        checkFlag();
-    });
-
-      // var editorrr = CKEDITOR.instances.editor1;
-      // editorrr.on("keyup",function(){});
+      });
 
       $("#pret-produse").keyup(function(){
         var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
         // console.log(var2);
-        checkFlag();
+        // checkFlag();
       });
 
       $("#nume-produse").keyup(function(){
         checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
-        checkFlag();
       });
 
-//        $( function() {
-//    $( "#dialog" ).dialog();
-//  } );
-        $("#uploadimage2").on('submit',(function(e) {
+
+      $("#btnSubmit").click(function(e){
+        
+        if($("#nume-produse").val()==""){
+          e.preventDefault();
+          alert("DENUMIRE NASOALA");
+          console.log(/^\d+$/.test($("#stoc-produse").val()));
+        } else if (/^\d+$/.test($("#stoc-produse").val()==true)){
+          e.preventDefault();
+          alert("stoc?");
+        }
+
+
+
+
+        else{
+
+          $("#uploadimage2").on('submit',(function(e) {
             e.preventDefault();
             $("#message2").empty();
             $('#loading').show();
@@ -146,44 +154,47 @@
                     $("#message2").html(data);
                 }
             });
-        }));
+          }));
 
-// Function to preview image after validation
-        $(function() {
-            $("#file2").change(function() {
-                $("#message2").empty(); // To remove the previous error message
-                var file = this.files[0];
-                var imagefile = file.type;
-                var match= ["image/jpeg","image/png","image/jpg"];
-                if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2])))
-                {
-                    $('#previewing2').attr('src','noimage.png');
-                    $("#message2").html("<p id='error'>Please Select A valid Image File</p>"+"<h4>Note</h4>"+"<span id='error_message'>Only jpeg, jpg and png Images type allowed</span>");
-                    return false;
-                }
-                else
-                {
-                    var reader = new FileReader();
-                    reader.onload = imageIsLoaded;
-                    reader.readAsDataURL(this.files[0]);
-                }
-            });
-        });
-        function imageIsLoaded(e) {
-            $("#file2").css("color","green");
-            $('#image_preview2').css("display", "block");
-            $('#previewing2').attr('src', e.target.result);
-            
 
-            //$('#previewing').attr('height', '400px');
-        };
-    }); $(function () {
+          $(function() {
+              $("#file2").change(function() {
+                  $("#message2").empty(); // To remove the previous error message
+                  var file = this.files[0];
+                  var imagefile = file.type;
+                  var match= ["image/jpeg","image/png","image/jpg"];
+                  if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2])))
+                  {
+                      $('#previewing2').attr('src','noimage.png');
+                      $("#message2").html("<p id='error'>Please Select A valid Image File</p>"+"<h4>Note</h4>"+"<span id='error_message'>Only jpeg, jpg and png Images type allowed</span>");
+                      return false;
+                  }
+                  else
+                  {
+                      var reader = new FileReader();
+                      reader.onload = imageIsLoaded;
+                      reader.readAsDataURL(this.files[0]);
+                  }
+              });
+          });
+          function imageIsLoaded(e) {
+              $("#file2").css("color","green");
+              $('#image_preview2').css("display", "block");
+              $('#previewing2').attr('src', e.target.result);
+              
+
+              //$('#previewing').attr('height', '400px');
+          };
+        }
+    }); 
+    });
+    $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace('editor1');
+      CKEDITOR.replace('editor1');
     //bootstrap WYSIHTML5 - text editor
     
-  })
+    });
    
 
 </script>
