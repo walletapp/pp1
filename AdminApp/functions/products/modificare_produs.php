@@ -112,8 +112,6 @@
 
       $("#pret-produse").keyup(function(){
         var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
-        // console.log(var2);
-        // checkFlag();
       });
 
       $("#nume-produse").keyup(function(){
@@ -122,20 +120,24 @@
 
 
       $("#btnSubmit").click(function(e){
-        
+        var stocul = /^\d+$/.test($("#stoc-produse").val());
+        console.log("stocul :"+stocul);
+        var pretul = /^[^.][\d]*\.?[\d]*$/.test($("#pret-produse").val());
+        console.log("pretul :"+pretul);
+        var ingredientele = CKEDITOR.instances.editor1.getData();
         if($("#nume-produse").val()==""){
           e.preventDefault();
           alert("DENUMIRE NASOALA");
-          console.log(/^\d+$/.test($("#stoc-produse").val()));
-        } else if (/^\d+$/.test($("#stoc-produse").val()==true)){
+        }else if(stocul == false || stocul == ""){
           e.preventDefault();
           alert("stoc?");
-        }
-
-
-
-
-        else{
+        }else if(pretul == false || pretul == ""){
+          e.preventDefault();
+          alert("pretul");
+        }else if(ingredientele==""){
+          e.preventDefault();
+          alert("ingredientele!");
+        }else{
 
           $("#uploadimage2").on('submit',(function(e) {
             e.preventDefault();
@@ -155,8 +157,6 @@
                 }
             });
           }));
-
-
           $(function() {
               $("#file2").change(function() {
                   $("#message2").empty(); // To remove the previous error message
