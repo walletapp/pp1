@@ -23,7 +23,7 @@
             <div class="inner">
               <h3><?php echo $rowStatistics['report']?></h3>
 
-              <p>Utilizatori nemultumiri/feedback</p>
+              <p>Raport/Feedback</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -68,7 +68,54 @@
             <div class="box-header with-border">
               <h3 class="box-title">Raport magazine</h3>
 
-              
+              <div class="box-footer">
+              <div class="row">
+                <div class="col-sm-2 col-xs-6">
+                  <div class="description-block border-right">
+<!--                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>-->
+                    <h5 class="description-header"><?php echo $rowStatistics['pret_total']?> &nbsp; Lei</h5>
+                    <span class="description-text">Profit total</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-2 col-xs-6">
+                  <div class="description-block border-right">
+<!--                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>-->
+                     <h5 class="description-header"><?php echo $rowStatistics['profitul_zilei']?> &nbsp; Lei</h5>
+                    <span class="description-text">Profitul zilei</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-2 col-xs-6">
+                  <div class="description-block border-right">
+<!--                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>-->
+                      <h5 class="description-header"><?php echo $rowStatistics['pret_total_buc']?> &nbsp; Lei</h5>
+                    <span class="description-text">Bucuresti</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-2 col-xs-6">
+                  <div class="description-block">
+<!--                    <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>-->
+                      <h5 class="description-header"><?php echo $rowStatistics['pret_total_cluj']?> &nbsp; Lei</h5>
+                    <span class="description-text">Cluj-Napoca</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                 <div class="col-sm-2 col-xs-6">
+                  <div class="description-block">
+<!--                    <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>-->
+                      <h5 class="description-header"><?php echo $rowStatistics['pret_total_alba']?> &nbsp; Lei</h5>
+                    <span class="description-text">Alba-Iulia</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+              </div>
+              <!-- /.row -->
+            </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -102,92 +149,167 @@
                     <!-- /.description-block -->
                   </div>
                 </div>
+                
                 <!-- /.col -->
               </div>
               <!-- /.row -->
+                 <div class="col-md-6" style="padding:20px;">
+                  <p class="text-center">
+                    <strong>Statistici meniu</strong>
+                  </p>
+
+                  <div class="progress-group">
+                    <span class="progress-text">Total produse existene in baza de date</span>
+                    <span class="progress-number"><span class="pull-right badge bg-green"><?php echo $rowStatistics['total_produse']?></span></span>
+<!--
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 100%"></div>
+                    </div>-->
+                  </div>
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">Total categorii existente in baza de date</span>
+                    <span class="progress-number"><span class="pull-right badge bg-green"><?php echo $rowStatistics['total_categori']?></span></span>
+
+<!--                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-red" style="width: 100%"></div>
+                    </div>-->
+                  </div>
+                  <!-- /.progress-group -->
+               
+                  <!-- /.progress-group -->
+                 
+                  <!-- /.progress-group -->
+                </div>
+              <div class="col-md-6" style="padding:20px;">
+                  <p class="text-center">
+                    <strong>Statistici meniu</strong>
+                  </p>
+
+                  <div class="progress-group">
+                    <span class="progress-text">Rapoarte/feedback</span>
+                    <span class="progress-number"><span class="pull-right badge bg-green"><?php echo $rowStatistics['report']?></span></span>
+<!--
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 100%"></div>
+                    </div>-->
+                  </div>
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">Recenzii la produse</span>
+                    <span class="progress-number"><span class="pull-right badge bg-green"><?php echo $rowStatistics['total_review']?></span></span>
+
+<!--                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-red" style="width: 100%"></div>
+                    </div>-->
+                  </div>
+                  <!-- /.progress-group -->
+               
+                  <!-- /.progress-group -->
+                 
+                  <!-- /.progress-group -->
+                </div>
             </div>
             <!-- /.box-body -->
+          
           </div>
+       
         
     </div>
            <div class="col-md-4">
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Produse rezervate</span>
-              <span class="info-box-number">5,200</span>
+              <span class="info-box-text">Rezervari totale</span>
+              <span class="info-box-number"><?php echo $rowStatistics['total_rezervari']?></span>
 
-              <div class="progress">
+<!--              <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
               </div>
               <span class="progress-description">
                     50% Increase in 30 Days
-                  </span>
+                  </span>-->
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Inventory</span>
-              <span class="info-box-number">5,200</span>
+              <span class="info-box-text">Rezervări preluate</span>
+              <span class="info-box-number"><?php echo $rowStatistics['rezervari_preluate']?></span>
 
-              <div class="progress">
+<!--              <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
               </div>
               <span class="progress-description">
                     50% Increase in 30 Days
-                  </span>
+                  </span>-->
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Inventory</span>
-              <span class="info-box-number">5,200</span>
+              <span class="info-box-text">Rezervări confirmate</span>
+              <span class="info-box-number"><?php echo $rowStatistics['rezervari_confirmate']?></span>
 
-              <div class="progress">
+<!--              <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
               </div>
               <span class="progress-description">
                     50% Increase in 30 Days
-                  </span>
+                  </span>-->
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Inventory</span>
-              <span class="info-box-number">5,200</span>
+              <span class="info-box-text">Rezervări anulate</span>
+              <span class="info-box-number"><?php echo $rowStatistics['rezervari_anulate']?></span>
 
-              <div class="progress">
+<!--              <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
               </div>
               <span class="progress-description">
                     50% Increase in 30 Days
-                  </span>
+                  </span>-->
             </div>
             <!-- /.info-box-content -->
           </div>
-               <div class="info-box bg-yellow">
+               <div class="info-box bg-white">
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Inventory</span>
-              <span class="info-box-number">5,200</span>
+              <span class="info-box-text">Rezervări șterse</span>
+              <span class="info-box-number"><?php echo $rowStatistics['rezervari_sterse']?></span>
 
-              <div class="progress">
+<!--              <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
               </div>
               <span class="progress-description">
                     50% Increase in 30 Days
-                  </span>
+                  </span>-->
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+                <div class="info-box bg-white">
+            <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Rezervări nepreluate</span>
+              <span class="info-box-number"><?php echo $rowStatistics['rezervari_nepreluate']?></span>
+
+<!--              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <span class="progress-description">
+                    50% Increase in 30 Days
+                  </span>-->
             </div>
             <!-- /.info-box-content -->
           </div>

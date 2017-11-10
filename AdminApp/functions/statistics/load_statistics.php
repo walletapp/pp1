@@ -23,7 +23,12 @@ $query='select count(user.userID) as "total_utilizatori",
 					 (select count(reserveproduct.idReserve) from reserveproduct where reserveproduct.`status`="3") as "rezervari_confirmate",
 					 (select count(reserveproduct.idReserve) from reserveproduct where reserveproduct.`status`="4") as "rezervari_anulate",
 					 (select count(reserveproduct.idReserve) from reserveproduct where reserveproduct.`status`="5") as "rezervari_sterse",
-					 (select count(reserveproduct.idReserve) from reserveproduct where reserveproduct.`status`="6") as "rezervari_nepreluate"
+					 (select count(reserveproduct.idReserve) from reserveproduct where reserveproduct.`status`="6") as "rezervari_nepreluate",
+                                          (select sum(reserveproduct.pretTotal) from reserveproduct where reserveproduct.`status`="2") as "pret_total",
+                                           (select sum(reserveproduct.pretTotal) from reserveproduct where reserveproduct.`idShop`="1" and reserveproduct.`status`="2") as "pret_total_alba",
+					   (select sum(reserveproduct.pretTotal) from reserveproduct where reserveproduct.`idShop`="2" and reserveproduct.`status`="2") as "pret_total_buc",
+					   (select sum(reserveproduct.pretTotal) from reserveproduct where reserveproduct.`idShop`="3" and reserveproduct.`status`="2") as "pret_total_cluj",
+                                          (select sum(reserveproduct.pretTotal) from reserveproduct where reserveproduct.`status`="2" and reserveproduct.endDate=CURDATE()) as "profitul_zilei"
  from user;';
 
 

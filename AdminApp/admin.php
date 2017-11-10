@@ -56,7 +56,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="dist/js/SimpleAjaxUploader.js"></script>
    <script src="dist/js/functie.js"></script>
   <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-  
+  <script src="bower_components/Chart.js/Chart.js"></script>
 <!-- FastClick -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
