@@ -73,16 +73,16 @@
                 $("#dialog-newsletter").dialog( "close" );
                 },
                 success: function(data) {
-               
+                alert(data);
                
                 alert(data);
                
                  },
                 error: function(xhr, status, error) {
-  alert(xhr.responseText);
+  //alert(xhr.responseText);
 },
                 complete: function(data) {
-                alert("complet"+data);
+              //  alert(data);
               
     },
                 dataType: 'html'

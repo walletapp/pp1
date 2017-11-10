@@ -8,7 +8,8 @@
 	require 'classes/PHPMailer/SMTP.php';
 	$delay=0.5;
 		mailClienti($_POST['title'],$_POST['message'],$conn);
-     $varMail="";
+               $varMail="";
+               $nrClienti;
 function mailClienti($subject, $message,$mysqli){
 		
 		//$message = date("Y-m-d h:i:s").": S-a trimis mail cătrespecializarea ".$cod_specializare." de către utilizatorul cu id-ul ". $_SESSION['id']." de la următoarea adresă: ".$_SERVER['REMOTE_ADDR']."\r\n";
@@ -27,7 +28,8 @@ function mailClienti($subject, $message,$mysqli){
 			
 			//$sql = $mysqli->query('SELECT email FROM absolventi WHERE email!="" and cod_specializare='.$cod_specializare.';');
 			$sql = $mysqli->query('SELECT email from user WHERE email!=""');
-			if(mysqli_num_rows($sql)>0) {
+                        $nrClienti= mysqli_num_rows($sql);
+			if($nrClienti) {
 			
 				$stack = array();
 				$group = 0;
@@ -61,12 +63,10 @@ function mailClienti($subject, $message,$mysqli){
 					  
 						    	if(!$mail->send()) 
 						    	{
-						    		echo 'Mailul nu a putut fi trimis.</a>';
-						    		echo '<br>Mailer Error: ' . $mail->ErrorInfo;
+						    		echo 'Newsletter-ul nu a putut fi trimis.</a>';
+						    		
 						    	}  else {
-						    		echo 'Succes<br>';
-						    		$spacer = "\r\n\r\n";
-	                					file_put_contents('logs/angajatori_email_log.txt', $spacer.PHP_EOL , FILE_APPEND | LOCK_EX);
+						    		echo 'Mail trimis cu succes la '.$nrClienti." clienti!";
 						    	}
 	
 						    	sleep($delay);
@@ -77,6 +77,7 @@ function mailClienti($subject, $message,$mysqli){
 				}
 				
 			}
+                        mysqli_close($mysqli);
 		}
 	
 ?>
