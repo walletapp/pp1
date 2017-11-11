@@ -120,9 +120,9 @@
         $('#iscorectPret').text("");
         $('#iscorectEdit').text("");
         var stocul = /^\d+$/.test($("#stoc-produse").val());
-        console.log("stocul :"+stocul);
+        // console.log("stocul :"+stocul);
         var pretul = /^[^.][\d]*\.?[\d]*$/.test($("#pret-produse").val());
-        console.log("pretul :"+pretul);
+        // console.log("pretul :"+pretul);
         var ingredientele = CKEDITOR.instances.editor1.getData();
         if($("#nume-produse").val()==""){
           e.preventDefault();

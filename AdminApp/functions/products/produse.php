@@ -135,46 +135,16 @@
 
 
     $(document).ready(function (e) {
-       
-// function checkFlag(){
-//         var thestoc = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
-//         var theprice = checkifPret("btnSubmit","iscorectPret","pret-produse");
-//         var thename = checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
-//         if (thestoc == 1 && theprice == 1 && thename == 1) {
-//           document.getElementById("btnSubmit").disabled = false;
-//         } else {
-//           document.getElementById("btnSubmit").disabled = true;
-//         }
-//       }
 
-    //   $("#stoc-produse").keyup(function(){
-    //     var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
-    //     // console.log(var1);
-    //     checkFlag();
-    // });
-
-
-    //   $("#pret-produse").keyup(function(){
-    //     var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
-    //     // console.log(var2);
-    //     checkFlag();
-    //   });
-
-    //   $("#nume-produse").keyup(function(){
-    //     checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
-    //     checkFlag();
-    //   });
-
-
-    $("#btnSubmit2").click(function(e){
+     $("#btnSubmit2").click(function(e){
       $('#iscorectDenumire').text("");
       $('#iscorectStoc').text("");
       $('#iscorectPret').text("");
       $('#iscorectEdit').text("");
       var stocul = /^\d+$/.test($("#stoc-produse").val());
-      console.log("stocul :"+stocul);
+      // console.log("stocul :"+stocul);
       var pretul = /^[^.][\d]*\.?[\d]*$/.test($("#pret-produse").val());
-      console.log("pretul :"+pretul);
+      // console.log("pretul :"+pretul);
       var ingredientele = CKEDITOR.instances.editor1.getData();
       if($("#nume-produse").val()==""){
         e.preventDefault();
@@ -193,19 +163,19 @@
             e.preventDefault();
             $("#message2").empty();
             $('#loading').show();
-            // $.ajax({
-            //     url: "functions/images/adaugare_produs_upload.php", // Url to which the request is send
-            //     type: "POST",             // Type of request to be send, called as method
-            //     data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-            //     contentType: false,       // The content type used when sending data to the server.
-            //     cache: false,             // To unable request pages to be cached
-            //     processData:false,        // To send DOMDocument or non processed data file it is set to false
-            //     success: function(data)   // A function to be called if request succeeds
-            //     {
-            //         $('#loading').hide();
-            //         $("#message2").html(data);
-            //     }
-            // });
+            $.ajax({
+                url: "functions/images/adaugare_produs_upload.php", // Url to which the request is send
+                type: "POST",             // Type of request to be send, called as method
+                data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+                contentType: false,       // The content type used when sending data to the server.
+                cache: false,             // To unable request pages to be cached
+                processData:false,        // To send DOMDocument or non processed data file it is set to false
+                success: function(data)   // A function to be called if request succeeds
+                {
+                    $('#loading').hide();
+                    $("#message2").html(data);
+                }
+            });
         }));
         }
       });
