@@ -173,8 +173,10 @@ desired effect
               <li class="header">Ultimele noutăți despre rezervări</li>
               <li>
                 <!-- inner menu: contains the actual data -->
-                <ul class="menu">
+                <ul  id="load_notif_push" class="menu">
+                   
                  <?php include 'functions/notifications/realtime/notifications_tab.php'?>
+                  
                  
                 </ul>
               </li>
@@ -408,7 +410,7 @@ desired effect
     </section>
 
     <!-- Main content -->
-    <section class="content" style="min-height: 900px;">
+    <section class="content">
         
      <?php 
         include 'functions/main/switchMenu.php';
@@ -431,7 +433,7 @@ desired effect
 <!--      Anything you want-->
     </div>
     <!-- Default to the left -->
-    <strong>Dezvoltat de <a href="https://www.walletisimo.com" target="_blank">Wallet App</a>.</strong> &copy; 2016  Toate drepturile rezervate.
+    <strong>Dezvoltat de <a href="https://www.walletisimo.com" target="_blank">Wallet App</a>.</strong> &copy; 2017  Toate drepturile rezervate.
   </footer>
 
   <!-- Control Sidebar -->
@@ -523,9 +525,10 @@ desired effect
 <!-- AdminLTE App -->
 <script>
     
- 
+ $('#load_badge').load('functions/notifications/realtime/badge_produse.php');    
         setInterval(function(){
-            $('#load_badge').load('functions/notifications/realtime/badge_produse.php');
+            $('#load_badge').load('functions/notifications/realtime/badge_produse.php');           
+            $('#load_notif_push').load('functions/notifications/realtime/notifications_tab.php');
         },2000);
     
     
