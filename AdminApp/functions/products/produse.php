@@ -52,7 +52,7 @@
                            <form id="uploadimage2" action="" method="post" enctype="multipart/form-data">
                             <div id="selectImage">
                                  
-                                <label>Denumire produs</label> <p id="iscorectDenumire" style="float:right">Campul nu poate fi gol!</p>
+                                <label>Denumire produs</label><small id="iscorectDenumire" class="label pull-right bg-red" style="float:right"></small> 
                                <input   style="margin-bottom:10px;" id="nume-produse" type="text" name="nume-produse" class="form-control">
                                 <label>Categorie produs</label>
                                 
@@ -67,7 +67,7 @@
                                       
                         
                                 </select>
-                                 <label>Ingrediente</label>               
+                                 <label>Ingrediente</label> <small id="iscorectEdit" class="label pull-right bg-red" style="float:right"></small>              
                                 
                                
                                
@@ -78,9 +78,9 @@
                 
               
            
-                                <label>Stoc</label>  <p id="iscorectStoc" style="float:right">Campul nu poate fi gol!</p>
+                                <label>Stoc</label><small id="iscorectStoc" class="label pull-right bg-red" style="float:right"></small> 
                                <input   style="margin-bottom:10px;" id="stoc-produse" type="text" name="stoc-produse" class="form-control" >
-                                <label>Preț</label> <p id="iscorectPret" style="float:right">Campul nu poate fi gol!</p>
+                                <label>Preț</label><small id="iscorectPret" class="label pull-right bg-red" style="float:right"></small>
                                <input   style="margin-bottom:10px;" id="pret-produse" type="text" name="pret-produse" class="form-control" >
                                
                              
@@ -94,7 +94,7 @@
                                   </div>
                                
                                   <div class="col-md-6">
-                                      <button   style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
+                                      <button  id="btnSubmit2"  style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
                                 </button> 
                                   </div>
                               </div>
@@ -113,8 +113,7 @@
         </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Anulare</button>
-                <button id="btnSubmit" type="button" class="btn btn-primary" disabled="">Adăugă</button>
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Anulare</button
               </div>
             </div>
             <!-- /.modal-content -->
@@ -137,56 +136,79 @@
 
     $(document).ready(function (e) {
        
-function checkFlag(){
-        var thestoc = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
-        var theprice = checkifPret("btnSubmit","iscorectPret","pret-produse");
-        var thename = checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
-        if (thestoc == 1 && theprice == 1 && thename == 1) {
-          document.getElementById("btnSubmit").disabled = false;
-        } else {
-          document.getElementById("btnSubmit").disabled = true;
-        }
-      }
+// function checkFlag(){
+//         var thestoc = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
+//         var theprice = checkifPret("btnSubmit","iscorectPret","pret-produse");
+//         var thename = checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
+//         if (thestoc == 1 && theprice == 1 && thename == 1) {
+//           document.getElementById("btnSubmit").disabled = false;
+//         } else {
+//           document.getElementById("btnSubmit").disabled = true;
+//         }
+//       }
 
-      $("#stoc-produse").keyup(function(){
-        var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
-        // console.log(var1);
-        checkFlag();
-    });
-
-
-      $("#pret-produse").keyup(function(){
-        var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
-        // console.log(var2);
-        checkFlag();
-      });
-
-      $("#nume-produse").keyup(function(){
-        checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
-        checkFlag();
-      });
+    //   $("#stoc-produse").keyup(function(){
+    //     var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
+    //     // console.log(var1);
+    //     checkFlag();
+    // });
 
 
+    //   $("#pret-produse").keyup(function(){
+    //     var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
+    //     // console.log(var2);
+    //     checkFlag();
+    //   });
+
+    //   $("#nume-produse").keyup(function(){
+    //     checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
+    //     checkFlag();
+    //   });
 
 
-        $("#uploadimage2").on('submit',(function(e) {
+    $("#btnSubmit2").click(function(e){
+      $('#iscorectDenumire').text("");
+      $('#iscorectStoc').text("");
+      $('#iscorectPret').text("");
+      $('#iscorectEdit').text("");
+      var stocul = /^\d+$/.test($("#stoc-produse").val());
+      console.log("stocul :"+stocul);
+      var pretul = /^[^.][\d]*\.?[\d]*$/.test($("#pret-produse").val());
+      console.log("pretul :"+pretul);
+      var ingredientele = CKEDITOR.instances.editor1.getData();
+      if($("#nume-produse").val()==""){
+        e.preventDefault();
+        $('#iscorectDenumire').text("Campul nu poate fi gol!");
+      }else if(ingredientele==""){
+        e.preventDefault();
+        $('#iscorectEdit').text("Campul nu poate fi gol!");
+      }else if(stocul == false || stocul == ""){
+        e.preventDefault();
+        $('#iscorectStoc').text("Sunt admise doar cifre!");
+      }else if(pretul == false || pretul == ""){
+        e.preventDefault();
+        $('#iscorectPret').text("Sunt admise doar cifre si un singur punct!");;
+      }else{
+          $("#uploadimage2").on('submit',(function(e) {
             e.preventDefault();
             $("#message2").empty();
             $('#loading').show();
-            $.ajax({
-                url: "functions/images/adaugare_produs_upload.php", // Url to which the request is send
-                type: "POST",             // Type of request to be send, called as method
-                data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-                contentType: false,       // The content type used when sending data to the server.
-                cache: false,             // To unable request pages to be cached
-                processData:false,        // To send DOMDocument or non processed data file it is set to false
-                success: function(data)   // A function to be called if request succeeds
-                {
-                    $('#loading').hide();
-                    $("#message2").html(data);
-                }
-            });
+            // $.ajax({
+            //     url: "functions/images/adaugare_produs_upload.php", // Url to which the request is send
+            //     type: "POST",             // Type of request to be send, called as method
+            //     data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+            //     contentType: false,       // The content type used when sending data to the server.
+            //     cache: false,             // To unable request pages to be cached
+            //     processData:false,        // To send DOMDocument or non processed data file it is set to false
+            //     success: function(data)   // A function to be called if request succeeds
+            //     {
+            //         $('#loading').hide();
+            //         $("#message2").html(data);
+            //     }
+            // });
         }));
+        }
+      });
 
 // Function to preview image after validation
         $(function() {

@@ -127,17 +127,16 @@
         if($("#nume-produse").val()==""){
           e.preventDefault();
           $('#iscorectDenumire').text("Campul nu poate fi gol!");
+        }else if(ingredientele==""){
+          e.preventDefault();
+          $('#iscorectEdit').text("Campul nu poate fi gol!");
         }else if(stocul == false || stocul == ""){
           e.preventDefault();
           $('#iscorectStoc').text("Sunt admise doar cifre!");
         }else if(pretul == false || pretul == ""){
           e.preventDefault();
-          $('#iscorectPret').text("Sunt admise doar cifre si un singur punct!");
-        }else if(ingredientele==""){
-          e.preventDefault();
-          $('#iscorectEdit').text("Campul nu poate fi gol!");
+          $('#iscorectPret').text("Sunt admise doar cifre si un singur punct!");;
         }else{
-
           $("#uploadimage2").on('submit',(function(e) {
             e.preventDefault();
             $("#message2").empty();
