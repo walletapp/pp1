@@ -42,7 +42,7 @@
                      <div class="row">
                          <div class="col-md-12"
                     <div class="form-group" >                  
-                        <label>Denumire categorie</label>                           
+                        <label>Denumire categorie</label><small id="iscorectTitlu" class="label pull-right bg-red"></small>
                            <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
                             <div id="selectImage">
                                <input  type="hidden" id="id-cat" name="id-cat" value="">
@@ -100,7 +100,7 @@
         
         if($("#valoare-input").val()==""){
           e.preventDefault();
-          alert("nu ie bine");
+          $('#iscorectTitlu').text("Titlul nu poate fi gol!");
         }else {
         $("#uploadimage").on('submit',(function(e) {
             e.preventDefault();

@@ -370,3 +370,717 @@ error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify faile
 2017-11-11 01:11:38 - Connection failed. Error #2: stream_socket_client(): Failed to enable crypto [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
 2017-11-11 01:11:38 - Connection failed. Error #2: stream_socket_client(): unable to connect to ssl://mail.debbies.ro:465 (Unknown error) [C:\xampp\htdocs\git-work\pp1\AdminApp\functions\phpMailer\classes\PHPMailer\SMTP.php line 335]
 2017-11-11 01:11:38 - SMTP ERROR: Failed to connect to server:  (0)
+2017-11-11 01:39:20 - Connection: opening to ssl://mail.debbies.ro:465, timeout=300, options=array()
+2017-11-11 01:39:23 - Connection: opened
+2017-11-11 01:39:23 - SERVER -> CLIENT: 220-server65.romania-webhosting.com ESMTP Exim 4.89 #1 Sat, 11 Nov 2017 14:39:21 +0200 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+2017-11-11 01:39:23 - CLIENT -> SERVER: EHLO localhost
+
+2017-11-11 01:39:23 - SERVER -> CLIENT: 250-server65.romania-webhosting.com Hello 5-15-154-227.residential.rdsnet.ro [5.15.154.227]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-AUTH PLAIN LOGIN
+250 HELP
+
+2017-11-11 01:39:23 - CLIENT -> SERVER: AUTH LOGIN
+
+2017-11-11 01:39:23 - SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2017-11-11 01:39:23 - CLIENT -> SERVER: bmV3c2xldHRlckBkZWJiaWVzLnJv
+
+2017-11-11 01:39:23 - SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2017-11-11 01:39:23 - CLIENT -> SERVER: bmRoZTEyMDIyMjA4
+
+2017-11-11 01:39:23 - SERVER -> CLIENT: 235 Authentication succeeded
+
+2017-11-11 01:39:23 - CLIENT -> SERVER: MAIL FROM:<newsletter@debbies.ro>
+
+2017-11-11 01:39:24 - SERVER -> CLIENT: 250 OK
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: RCPT TO:<tedere87@gmail.com>
+
+2017-11-11 01:39:24 - SERVER -> CLIENT: 250 Accepted
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: DATA
+
+2017-11-11 01:39:24 - SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Date: Sat, 11 Nov 2017 13:39:20 +0100
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: To: tedere87@gmail.com
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: From: Noutati Debbie's Yogurt <newsletter@debbies.ro>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Subject: Test newsletter 11/11
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Message-ID: <cgWonAH4w8UWa2cxGiE6T9zucWc6HUlHCIQBFixTf0@localhost>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: X-Mailer: PHPMailer 6.0.1 (https://github.com/PHPMailer/PHPMailer)
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: MIME-Version: 1.0
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: 	boundary="b1_cgWonAH4w8UWa2cxGiE6T9zucWc6HUlHCIQBFixTf0"
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: --b1_cgWonAH4w8UWa2cxGiE6T9zucWc6HUlHCIQBFixTf0
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: EROARE: Incercati vizualizarea acestui mail folosind un alt dispozitiv.
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: --b1_cgWonAH4w8UWa2cxGiE6T9zucWc6HUlHCIQBFixTf0
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: <!DOCTYPE html>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: <html>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:     <head>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:         
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:         <meta charset="UTF-8">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:      
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:         <style>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             *{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:              margin:0px;   
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:            
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .logo{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width:200px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .header{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 background-color:#111921;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width:100%;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 height:160px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 padding-top:10px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 padding-bottom:10px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .continut{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 background-color: #74c374;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width:100%;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 margin:auto;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .continutMail{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width:100%;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 padding-top:10px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 padding-bottom:10px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .hlogo{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 color:white;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .centrareLogo{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                text-align: center;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .continutText{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width:600px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 margin:10px auto;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 padding:40px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 margin:10px auto;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 background-color:#f9fce6;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .textHeader{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 margin-top:40px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 margin-bottom: 40px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             #h1P{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 font-size: 30px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .continutProduse{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 margin-top:40px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                margin-bottom:40px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                  
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .footer{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                  padding-top:20px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 padding-bottom:20px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 background-color:#111921;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 text-align: center;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 color:#e4e9c6;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 font-size: 18px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width: 100%;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             table{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width: 100%;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                    border-collapse: collapse;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .tabelContinut{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 text-align: left;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             td{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 padding:10px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 border-bottom: solid 1px #c2c7a1;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:    
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:     
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                   
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:            tr:nth-child(even){
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:              
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:           
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:            }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:           
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             .pozaTabel{
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 width:50px;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                  border-radius: 50%;
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:         </style>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:     </head>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:     <body>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:         <div class="continut">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             <div class="header">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 <div class="centrareLogo">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 <img class="logo" src="http://debbies.ro/DebbiesAndroid/logo_debbie2.png">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 <h3 class="hlogo">Delicii naturale</h3>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 </div>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             </div>
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:             <div class="continutMail">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                 <div class="continutText">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                     <div class="textHeader">
+
+2017-11-11 01:39:24 - CLIENT -> SERVER:                       <h2>  Test newsletter 11/11
+
+2017-11-11 01:39:24 - CLIENT -> SERVER: </h2>                    </div>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:                     <p>test 123</p>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:                 </div>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:                
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:             </div>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:             <div class="footer">© &nbsp;2017&nbsp; - &nbsp;Debbie's Yogurt&nbsp; </div>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:         </div>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER:     </body>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: </html>
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: --b1_cgWonAH4w8UWa2cxGiE6T9zucWc6HUlHCIQBFixTf0--
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: .
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 250 OK id=1eDV4E-001RMm-1S
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: QUIT
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 221 server65.romania-webhosting.com closing connection
+
+2017-11-11 01:39:25 - Connection: closed
+
+
+
+2017-11-11 01:39:25 - Connection: opening to ssl://mail.debbies.ro:465, timeout=300, options=array()
+2017-11-11 01:39:25 - Connection: opened
+2017-11-11 01:39:25 - SERVER -> CLIENT: 220-server65.romania-webhosting.com ESMTP Exim 4.89 #1 Sat, 11 Nov 2017 14:39:23 +0200 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: EHLO localhost
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 250-server65.romania-webhosting.com Hello 5-15-154-227.residential.rdsnet.ro [5.15.154.227]
+250-SIZE 52428800
+250-8BITMIME
+250-PIPELINING
+250-AUTH PLAIN LOGIN
+250 HELP
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: AUTH LOGIN
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: bmV3c2xldHRlckBkZWJiaWVzLnJv
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: bmRoZTEyMDIyMjA4
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 235 Authentication succeeded
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: MAIL FROM:<newsletter@debbies.ro>
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 250 OK
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: RCPT TO:<alex.donea92@gmail.com>
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 250 Accepted
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: DATA
+
+2017-11-11 01:39:25 - SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+2017-11-11 01:39:25 - CLIENT -> SERVER: Date: Sat, 11 Nov 2017 13:39:25 +0100
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: To: alex.donea92@gmail.com
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: From: Noutati Debbie's Yogurt <newsletter@debbies.ro>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: Subject: Test newsletter 11/11
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: Message-ID: <SXMdXZsmZKfhKMaz0oxtDQVWRbuENW3N0z5kjdg94@localhost>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: X-Mailer: PHPMailer 6.0.1 (https://github.com/PHPMailer/PHPMailer)
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: MIME-Version: 1.0
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: 	boundary="b1_SXMdXZsmZKfhKMaz0oxtDQVWRbuENW3N0z5kjdg94"
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: --b1_SXMdXZsmZKfhKMaz0oxtDQVWRbuENW3N0z5kjdg94
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: EROARE: Incercati vizualizarea acestui mail folosind un alt dispozitiv.
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: --b1_SXMdXZsmZKfhKMaz0oxtDQVWRbuENW3N0z5kjdg94
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: <!DOCTYPE html>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: <html>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:     <head>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:         
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:         <meta charset="UTF-8">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:      
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:         <style>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             *{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:              margin:0px;   
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:            
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .logo{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width:200px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .header{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 background-color:#111921;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width:100%;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 height:160px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 padding-top:10px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 padding-bottom:10px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .continut{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 background-color: #74c374;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width:100%;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 margin:auto;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .continutMail{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width:100%;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 padding-top:10px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 padding-bottom:10px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .hlogo{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 color:white;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .centrareLogo{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                text-align: center;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .continutText{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width:600px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 margin:10px auto;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 padding:40px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 margin:10px auto;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 background-color:#f9fce6;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .textHeader{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 margin-top:40px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 margin-bottom: 40px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             #h1P{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 font-size: 30px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .continutProduse{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 margin-top:40px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                margin-bottom:40px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                  
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .footer{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                  padding-top:20px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 padding-bottom:20px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 background-color:#111921;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 text-align: center;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 color:#e4e9c6;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 font-size: 18px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width: 100%;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             table{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width: 100%;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                    border-collapse: collapse;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .tabelContinut{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 text-align: left;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             td{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 padding:10px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 border-bottom: solid 1px #c2c7a1;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:    
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:     
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                   
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:            tr:nth-child(even){
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:              
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:           
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:            }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:           
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             .pozaTabel{
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 width:50px;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                  border-radius: 50%;
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             }
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:         </style>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:     </head>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:     <body>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:         <div class="continut">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             <div class="header">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 <div class="centrareLogo">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 <img class="logo" src="http://debbies.ro/DebbiesAndroid/logo_debbie2.png">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 <h3 class="hlogo">Delicii naturale</h3>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 </div>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             </div>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             <div class="continutMail">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 <div class="continutText">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                     <div class="textHeader">
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                       <h2>  Test newsletter 11/11
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: </h2>                    </div>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                     <p>test 123</p>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 </div>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                 
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:                
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:               
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             </div>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:             <div class="footer">© &nbsp;2017&nbsp; - &nbsp;Debbie's Yogurt&nbsp; </div>
+
+2017-11-11 01:39:26 - CLIENT -> SERVER:         </div>
+
+2017-11-11 01:39:27 - CLIENT -> SERVER:     </body>
+
+2017-11-11 01:39:27 - CLIENT -> SERVER: </html>
+
+2017-11-11 01:39:27 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:27 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:27 - CLIENT -> SERVER: --b1_SXMdXZsmZKfhKMaz0oxtDQVWRbuENW3N0z5kjdg94--
+
+2017-11-11 01:39:27 - CLIENT -> SERVER: 
+
+2017-11-11 01:39:27 - CLIENT -> SERVER: .
+
+2017-11-11 01:39:27 - SERVER -> CLIENT: 250 OK id=1eDV4F-001RPK-UU
+
+2017-11-11 01:39:27 - CLIENT -> SERVER: QUIT
+
+2017-11-11 01:39:27 - SERVER -> CLIENT: 221 server65.romania-webhosting.com closing connection
+
+2017-11-11 01:39:27 - Connection: closed
+
+
+

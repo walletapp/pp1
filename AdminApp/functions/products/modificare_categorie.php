@@ -14,8 +14,8 @@
     <div class="box-body">                 
               
                     <div class="form-group" >                  
-                        <label>Denumire categorie</label> <p id="iscorectDenumire" style="float:right;margin: 0px;"></p>                      
-                           <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+                        <label>Denumire categorie</label><small id="iscorectDenumire" class="label pull-right bg-red" style="float:right"></small>
+                        <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
                             <div id="selectImage">
                                <input  type="hidden" id="id-cat" name="id-cat" value="<?php echo $_GET['id'];?>">
                                <input   style="margin-bottom:10px;" id="valoare-input" type="text" name="valoare-input" class="form-control" value="<?php echo $row['categoryName']?>">
@@ -100,9 +100,9 @@
 
 
 
-      $("#valoare-input").keyup(function(){
-        checkifDenumireProdus("btnSubmit","iscorectDenumire","valoare-input");
-      });
+      // $("#valoare-input").keyup(function(){
+      //   checkifDenumireProdus("btnSubmit","iscorectDenumire","valoare-input");
+      // });
 
 
 
@@ -110,7 +110,7 @@
 
         if($("#valoare-input").val()==""){
           e.preventDefault();
-          alert("Denumire nasoala");
+          $('#iscorectDenumire').text("Titlul nu poate fi gol!");
         }else{
 
           $("#uploadimage").on('submit',(function(e) {
