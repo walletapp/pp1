@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
  
-  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   

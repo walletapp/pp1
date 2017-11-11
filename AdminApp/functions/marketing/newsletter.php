@@ -1,6 +1,6 @@
 <div class="row" >
     <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="box box-primary">
+        <div class="box box-primary" style="padding:20px;">
             <div class="box-header with-border" style="padding-top: 20px; padding-bottom: 20px;">
               <h3 class="box-title">Creare newsletter pentru toți clienți</h3>
 

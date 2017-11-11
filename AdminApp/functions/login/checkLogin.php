@@ -36,7 +36,7 @@ function check($usr, $pass,$conn){
        
         $_SESSION['admin']=$usr;
         $_SESSION['status']='autentificat';
-         header('Location: admin.php');
+         header('Location: admin.php?m=acasa&a=activ1');
         
     }    
     else{
