@@ -35,12 +35,11 @@
         <li><a href="#"><i class="fa fa-building" aria-hidden="true"></i> <span>Magazin</span> <span class="pull-right-container">
               <small class="label pull-right bg-green">în dezvoltare</small>
             </span></a></li>
-          <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> <span>Setări</span> <span class="pull-right-container">
+           <li class="<?php echo meniuActiv($_GET['e'])?>" ><a href="?m=raport&e=activ5"><i class="fa fa-cog" aria-hidden="true"></i> <span>Raportul clientului</span></a></li>
+            <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> <span>Setări</span> <span class="pull-right-container">
               <small class="label pull-right bg-green">în dezvoltare</small>
             </span></a></li>
-             <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> <span>Parerea clienților</span> <span class="pull-right-container">
-              <small class="label pull-right bg-green">în dezvoltare</small>
-            </span></a></li>
+           
       </ul>
 
 
