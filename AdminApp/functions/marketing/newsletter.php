@@ -13,7 +13,7 @@
                 <!-- Check all button -->
 
                 <div class="form-group">
-                  <label>Titlul mesajului</label> <p id="iscorectTitlu" style="float:right">Campul nu poate fi gol!</p>
+                  <label>Titlul mesajului</label><small id="iscorectTitlu" class="label pull-right bg-red"></small>
                   <input class="form-control" id="titlu-news" placeholder="" type="text">
                 </div>
                  <div class="form-group">
@@ -54,13 +54,17 @@
     });
     CKEDITOR.replace('editor1');
   });  
-  
+  var test;
   $('#trimite-buton').click(function(e){
+        test=e;
     if($("#titlu-news").val()==""){
-      console.log("titlul nu poate fi gol");
+      
+      $('#iscorectTitlu').text("Titlul nu poate fi gol!");
     }else{
       if(CKEDITOR.instances.editor1.getData()==""){
-      console.log("mesaj gol!");
+        
+       $('#iscorectTitlu').text("Mesajul nu poate fi gol!");
+      
       }else{
         $( "#dialog-newsletter" ).dialog({
           resizable: false,
@@ -76,15 +80,19 @@
                 data:{"message":CKEDITOR.instances['editor1'].getData(),"title":$('#titlu-news').val()},
                 beforeSend: function() { 
                   $("#dialog-newsletter").dialog( "close" );
+                  
                 },
                 success: function(data) {
-                  alert(data);
+                 
+                  alert("Mail-urile au fost experiate cu succes!");
+                
                 },
                 error: function(xhr) {
-                  // alert(xhr.responseText);
+                   alert(xhr.responseText);
                 },
                 complete: function(data) {
-                  // alert(data);             
+                  // alert(data);
+                  
                 }
               });
             },
@@ -93,6 +101,7 @@
             }
           }
         });
+        
       }
     }
     

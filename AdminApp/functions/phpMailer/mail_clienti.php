@@ -7,8 +7,12 @@
 	require 'classes/PHPMailer/PHPMailer.php';
 	require 'classes/PHPMailer/SMTP.php';
 	
-      
+        if(isset($_POST['title']) && isset($_POST['message'])){
 		mailClienti($_POST['title'], designMail($_POST['title'],$_POST['message']),$conn);
+        }
+        else{
+            echo "Eroare date!";
+        }
      $varMail="";
 function mailClienti($subject, $message,$mysqli){
 		
@@ -78,6 +82,8 @@ function mailClienti($subject, $message,$mysqli){
 				}
 				
 			}
+                        mysqli_close($conn);
+                        
 		}
                 
                 

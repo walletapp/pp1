@@ -6,7 +6,7 @@ function checkifCategorie(idbtn,idP,input){
     var theInput = document.getElementById(input1).value;
     var matches = theInput.match(/^[a-zA-Z_ ]+$/i);
     if(theInput==""){
-      iscorect.innerHTML="Campul nu poate fi gol!";
+      iscorect.innerHTML="<small class=\"label pull-right bg-red\">Câmpul nu poate fi gol!</small>";
       btnAdd.disabled = true;
     }else if(matches ==null){
       btnAdd.disabled = true;
@@ -26,7 +26,7 @@ function checkeifDenumire(idbtn,idP,input){
     var theInput = document.getElementById(input1).value;
     var matches = theInput.match(/^[a-zA-Z_ ]+$/i);
     if(theInput==""){
-      iscorect.innerHTML="Campul nu poate fi gol!";
+      iscorect.innerHTML="<small class=\"label pull-right bg-red\">Câmpul nu poate fi gol!</small>";
       btnAdd.disabled = true;
     }else if(matches ==null){
       btnAdd.disabled = true;
@@ -45,7 +45,7 @@ function checkifPret(idbtn,idP,input){
   var btnAdd = document.getElementById(idbtn);
   var matches = /^[^.][\d]*\.?[\d]*$/.test(theInput);
   if(theInput==""){
-    iscorect.innerHTML="Campul nu poate fi gol!";
+    iscorect.innerHTML="<small class=\"label pull-right bg-red\">Câmpul nu poate fi gol!</small>";
     return 0;
   }else if(matches ==false){
     iscorect.innerHTML="Doar cifre si un singur punct.";
@@ -63,7 +63,7 @@ function checkifStoc(idbtn,idP,input){
   var theInput = document.getElementById(input).value;
   var matches = /^\d+$/.test(theInput);
   if(theInput==""){
-    iscorect.innerHTML="Campul nu poate fi gol!";
+    iscorect.innerHTML="<small class=\"label pull-right bg-red\">Câmpul nu poate fi gol!</small>";
     // btnAdd.disabled = true;
     return 0;
   }else if(matches ==false){
@@ -85,7 +85,7 @@ function checkifDenumireProdus(idbtn,idP,input){
     var theInput = document.getElementById(input).value;
     // var matches = theInput.match(/^[a-zA-Z_ ]/i);
     if(theInput==""){
-      iscorect.innerHTML="Campul nu poate fi gol!";
+      iscorect.innerHTML="<small class=\"label pull-right bg-red\">Câmpul nu poate fi gol!</small>";
       // btnAdd.disabled = true;
       return 0;
     } else {
@@ -101,7 +101,7 @@ function checkContentProdus (idbtn,idP,input){
   var btnAdd = document.getElementById(idbtn);
   var theInput = CKEDITOR.instances[input].getData();
   if(theInput==""){
-      iscorect.innerHTML="Campul nu poate fi gol!";
+      iscorect.innerHTML="<small class=\"label pull-right bg-red\">Câmpul nu poate fi gol!</small>";
       // btnAdd.disabled = true;
       console.log("0");
       return 0;
