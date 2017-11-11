@@ -496,6 +496,15 @@ desired effect
 <script src="plugins/iCheck/icheck.min.js"></script>
 <!-- AdminLTE App -->
 <script>
+    
+ 
+        setInterval(function(){
+            $('#load_badge').load('functions/notifications/realtime/badge_produse.php');
+        },2000);
+    
+    
+    
+    
     $(function () {
         $('input').iCheck({
             checkboxClass: 'icheckbox_square-blue',

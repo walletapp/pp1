@@ -1,3 +1,4 @@
+ <?php include 'functions/notifications/realtime/badge_produse.php';?>
  <ul class="sidebar-menu" data-widget="tree">
      <li class="header" style="text-align: center; background-color:#222d32;">
          <a href="admin.php?m=acasa&a=activ1"><img src="functions/images/logo/logo_debbie2.png" style="width:140px;"></a>
@@ -8,7 +9,7 @@
         <li class="<?php echo meniuActiv($_GET['a'])?>"><a href="?m=acasa&a=activ1"><i class="fa fa-globe" aria-hidden="true"></i> &nbsp; <span>Statistici</span></a></li>
         <li class="<?php echo meniuActiv($_GET['b'])?>"><a href="?m=rezervari&b=activ2"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Rezervări</span>
              <span class="pull-right-container">
-              <small class="label pull-right bg-red">10</small>
+                 <small class="label pull-right bg-red"><div id="load_badge"></div></small>
             </span></a></li>
         <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Rezervări mese</span> <span class="pull-right-container">
               <small class="label pull-right bg-green">în dezvoltare</small>
