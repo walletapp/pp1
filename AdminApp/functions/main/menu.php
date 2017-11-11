@@ -6,12 +6,16 @@
 <!--        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>-->
         
         <li class="<?php echo meniuActiv($_GET['a'])?>"><a href="?m=acasa&a=activ1"><i class="fa fa-globe" aria-hidden="true"></i> &nbsp; <span>Statistici</span></a></li>
-        <li class="<?php echo meniuActiv($_GET['b'])?>"><a href="?m=rezervari&b=activ2"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Rezervări</span></a></li>
-        <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Rezervări mese</span> <span class="pull-right-container">
-              <small class="label pull-right bg-red">în dezvoltare</small>
+        <li class="<?php echo meniuActiv($_GET['b'])?>"><a href="?m=rezervari&b=activ2"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Rezervări</span>
+             <span class="pull-right-container">
+              <small class="label pull-right bg-red">10</small>
             </span></a></li>
-        <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Comenzi</span> <span class="pull-right-container">
-              <small class="label pull-right bg-red">în dezvoltare</small>
+        <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Rezervări mese</span> <span class="pull-right-container">
+              <small class="label pull-right bg-green">în dezvoltare</small>
+            </span></a></li>
+        <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp; <span>Comenzi</span> 
+                <span class="pull-right-container">
+              <small class="label pull-right bg-green">în dezvoltare</small>
             </span></a></li>
         <li class="treeview <?php echo meniuActiv($_GET['d'])?>">
           <a href="?m=acasa&d=activ4"><i class="fa fa-commenting"></i> <span>Marketing</span>
@@ -25,10 +29,17 @@
             <li><a href="admin.php?m=hostes&f=active6&d=activ4"><i class="fa fa-circle-o"></i>Hostes Marketing</a></li>
           </ul>
         </li>
-        <li class="<?php echo meniuActiv($_GET['c'])?>"><a href="?m=gestiune&c=activ3"><i class="fa fa-tachometer"></i> <span>Gestiune produse</span></a></li>
+        <li class="<?php echo meniuActiv($_GET['c'])?>"><a href="?m=gestiune&c=activ3"><i class="fa fa-tachometer"></i> <span>Produse și categorii</span></a></li>
         
-        <li><a href="#"><i class="fa fa-building" aria-hidden="true"></i> <span>Magazin</span></a></li>
-          <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> <span>Setări</span></a></li>
+        <li><a href="#"><i class="fa fa-building" aria-hidden="true"></i> <span>Magazin</span> <span class="pull-right-container">
+              <small class="label pull-right bg-green">în dezvoltare</small>
+            </span></a></li>
+          <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> <span>Setări</span> <span class="pull-right-container">
+              <small class="label pull-right bg-green">în dezvoltare</small>
+            </span></a></li>
+             <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> <span>Parerea clienților</span> <span class="pull-right-container">
+              <small class="label pull-right bg-green">în dezvoltare</small>
+            </span></a></li>
       </ul>
 
 

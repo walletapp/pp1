@@ -27,6 +27,9 @@ function setTitle($val){
          case "acasa":
             return "Statistici generale";
             break;
+         case "newsletter":
+            return "Newsletter";
+            break;
     }
 
 }
@@ -49,7 +52,8 @@ function switchNavigation($val){
         <li class="active">Vedere rezervare</li>';
             break;
         case "gestiune":
-            return '<li class="active">Panou gestiune</li>';
+            return '<li><a href="?m=acasa&a=activ1"><i class="fa fa-home"></i> Acasă</a></li>'
+            . '<li class="active">Panou gestiune</li>';
             break;
         case "modificare_categorie":
             return '
@@ -61,6 +65,12 @@ function switchNavigation($val){
             return '
             <li class="active"><a href="?m=gestiune&c=activ3">Management categorii și produse</a></li>
             <li class="active">Modificare produs</a></li>
+            ';
+            break;
+         case "newsletter":
+            return '
+            <li><a href="?m=acasa&a=activ1"><i class="fa fa-home"></i> Acasă</a></li>
+            <li class="active">Newsletter</a></li>
             ';
             break;
     }

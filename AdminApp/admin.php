@@ -150,9 +150,9 @@ desired effect
     <!-- Logo -->
     <a href="admin.php?m=acasa&a=activ1" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"></span>
+      <span class="logo-mini">D</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b> panel</span>
+      <span class="logo-lg">Panou de control</span>
     </a>
 
     <!-- Header Navbar -->
