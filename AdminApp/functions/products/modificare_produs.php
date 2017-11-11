@@ -13,8 +13,7 @@
                            <form id="uploadimage2" action="" method="post" enctype="multipart/form-data">
                             <div id="selectImage">
                                  
-                                <label>Denumire produs</label> 
-                                <p id="iscorectDenumire" style="float:right"></p>
+                                <label>Denumire produs</label><small id="iscorectDenumire" class="label pull-right bg-red" style="float:right"></small>
                                <input   style="margin-bottom:10px;" id="nume-produse" type="text" name="nume-produse" value="<?php echo $rowP['nameProduct']?>" class="form-control">
                                 <label>Categorie produs</label>
                                 
@@ -31,12 +30,8 @@
                                       
                         
                                 </select>
-                                 <label>Ingrediente</label>  <p style="float:right" id="iscorectEdit"></p>             
-                                
-                               
-                               
-                               
-                                 <textarea id="editor1" name="editor1" rows="10" cols="80" style="visibility: hidden; display: none;">
+                                <label>Ingrediente</label><small id="iscorectEdit" class="label pull-right bg-red" style="float:right"></small>             
+                                <textarea id="editor1" name="editor1" rows="10" cols="80" style="visibility: hidden; display: none;">
                                      <?php echo $rowP['ingrediente']?>
                                  </textarea><br>
                                 
@@ -44,9 +39,9 @@
                 
               
            
-                                <label>Stoc</label> <p style="float:right" id="iscorectStoc"></p>
+                                <label>Stoc</label><small id="iscorectStoc" class="label pull-right bg-red" style="float:right"></small>
                                 <input   style="margin-bottom:10px;" id="stoc-produse" type="text" name="stoc-produse" class="form-control" value="<?php echo $rowP['stock']?>" > 
-                                <label>Preț</label> <p style="float:right" id="iscorectPret"></p>
+                                <label>Preț</label><small id="iscorectPret" class="label pull-right bg-red" style="float:right"></small>
                                 <input   style="margin-bottom:10px;" id="pret-produse" type="text" name="pret-produse" class="form-control" value="<?php echo $rowP['price']?>">
                                
                              
@@ -106,20 +101,24 @@
         }
       }
 
-      $("#stoc-produse").keyup(function(){
-        var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
-      });
+      // $("#stoc-produse").keyup(function(){
+      //   var var1 = checkifStoc("btnSubmit","iscorectStoc","stoc-produse");
+      // });
 
-      $("#pret-produse").keyup(function(){
-        var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
-      });
+      // $("#pret-produse").keyup(function(){
+      //   var var2 = checkifPret("btnSubmit","iscorectPret","pret-produse");
+      // });
 
-      $("#nume-produse").keyup(function(){
-        checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
-      });
+      // $("#nume-produse").keyup(function(){
+      //   checkifDenumireProdus("btnSubmit","iscorectDenumire","nume-produse");
+      // });
 
 
       $("#btnSubmit").click(function(e){
+        $('#iscorectDenumire').text("");
+        $('#iscorectStoc').text("");
+        $('#iscorectPret').text("");
+        $('#iscorectEdit').text("");
         var stocul = /^\d+$/.test($("#stoc-produse").val());
         console.log("stocul :"+stocul);
         var pretul = /^[^.][\d]*\.?[\d]*$/.test($("#pret-produse").val());
@@ -127,16 +126,16 @@
         var ingredientele = CKEDITOR.instances.editor1.getData();
         if($("#nume-produse").val()==""){
           e.preventDefault();
-          alert("DENUMIRE NASOALA");
+          $('#iscorectDenumire').text("Campul nu poate fi gol!");
         }else if(stocul == false || stocul == ""){
           e.preventDefault();
-          alert("stoc?");
+          $('#iscorectStoc').text("Sunt admise doar cifre!");
         }else if(pretul == false || pretul == ""){
           e.preventDefault();
-          alert("pretul");
+          $('#iscorectPret').text("Sunt admise doar cifre si un singur punct!");
         }else if(ingredientele==""){
           e.preventDefault();
-          alert("ingredientele!");
+          $('#iscorectEdit').text("Campul nu poate fi gol!");
         }else{
 
           $("#uploadimage2").on('submit',(function(e) {

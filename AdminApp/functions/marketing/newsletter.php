@@ -17,7 +17,7 @@
                   <input class="form-control" id="titlu-news" placeholder="" type="text">
                 </div>
                  <div class="form-group">
-                  <label>Mesajul</label>
+                  <label>Mesajul</label><small id="iscorectMesaj" class="label pull-right bg-red"></small>
                    <textarea id="editor1" name="editor1" rows="10" cols="80" style="visibility: hidden; display: none;">
                    
                    </textarea>
@@ -63,7 +63,7 @@
     }else{
       if(CKEDITOR.instances.editor1.getData()==""){
         
-       $('#iscorectTitlu').text("Mesajul nu poate fi gol!");
+       $('#iscorectMesaj').text("Mesajul nu poate fi gol!");
       
       }else{
         $( "#dialog-newsletter" ).dialog({
