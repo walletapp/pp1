@@ -120,24 +120,23 @@
         $('#iscorectPret').text("");
         $('#iscorectEdit').text("");
         var stocul = /^\d+$/.test($("#stoc-produse").val());
-        console.log("stocul :"+stocul);
+        // console.log("stocul :"+stocul);
         var pretul = /^[^.][\d]*\.?[\d]*$/.test($("#pret-produse").val());
-        console.log("pretul :"+pretul);
+        // console.log("pretul :"+pretul);
         var ingredientele = CKEDITOR.instances.editor1.getData();
         if($("#nume-produse").val()==""){
           e.preventDefault();
           $('#iscorectDenumire').text("Campul nu poate fi gol!");
+        }else if(ingredientele==""){
+          e.preventDefault();
+          $('#iscorectEdit').text("Campul nu poate fi gol!");
         }else if(stocul == false || stocul == ""){
           e.preventDefault();
           $('#iscorectStoc').text("Sunt admise doar cifre!");
         }else if(pretul == false || pretul == ""){
           e.preventDefault();
-          $('#iscorectPret').text("Sunt admise doar cifre si un singur punct!");
-        }else if(ingredientele==""){
-          e.preventDefault();
-          $('#iscorectEdit').text("Campul nu poate fi gol!");
+          $('#iscorectPret').text("Sunt admise doar cifre si un singur punct!");;
         }else{
-
           $("#uploadimage2").on('submit',(function(e) {
             e.preventDefault();
             $("#message2").empty();
