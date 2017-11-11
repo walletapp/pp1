@@ -163,11 +163,37 @@ desired effect
       </a><!--
        Navbar Right Menu 
 -->      <div class="navbar-custom-menu"><!--
--->        <ul class="nav navbar-nav"><!--
+-->        <ul class="nav navbar-nav">
+    <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">Ultimele noutăți despre rezervări</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                 <?php include 'functions/notifications/realtime/notifications_tab.php'?>
+                 
+                </ul>
+              </li>
+<!--              <li class="footer"><a href="#">View all</a></li>-->
+            </ul>
+          </li>
+    
+    <!--
            Messages: style can be found in dropdown.less
 -->             <li class="dropdown messages-menu">
     <a href="logout.php"><i class="ion ion-android-exit"></i>&nbsp;Deconectare</a>
-</li><!--
+</li>
+
+        
+
+
+<!--
+     
+     
     
              Menu toggle button 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
