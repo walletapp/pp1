@@ -126,23 +126,23 @@
         var ingredientele = CKEDITOR.instances.editor1.getData();
         if($("#nume-produse").val()==""){
           e.preventDefault();
-          alert("1");
+         // alert("1");
           $('#iscorectDenumire').text("Campul nu poate fi gol!");
         }else if(ingredientele==""){
-            alert("2");
+          //  alert("2");
           e.preventDefault();
           $('#iscorectEdit').text("Campul nu poate fi gol!");
         }else if(stocul == false || stocul == ""){
-            alert("3");
+          //  alert("3");
           e.preventDefault();
           $('#iscorectStoc').text("Sunt admise doar cifre!");
         }else if(pretul == false || pretul == ""){
-            alert("4");
+          //  alert("4");
           e.preventDefault();
           $('#iscorectPret').text("Sunt admise doar cifre si un singur punct!");;
         }else{
           $("#uploadimage2").on('submit',(function(e) {
-              alert("5");
+            //  alert("5");
             e.preventDefault();
             $("#message2").empty();
             $('#loading').show();

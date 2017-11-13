@@ -24,7 +24,7 @@ if(isset($_FILES["file"]["type"]))
                  if(!$name=="produs-default.png"){
                 unlink("upload/products".$name);
                 }
-                echo "eroare, nu exista poza1111111";  
+               // echo "eroare, nu exista poza1111111";  
                // echo "<span id='success'>Image Deleted Successfully...!!</span><br/>";
                 $sourcePath = $_FILES['file']['tmp_name']; // Storing source path of the file in a variable
                 $targetPath = "upload/products".$name; // Target path where file is to be stored
@@ -36,10 +36,10 @@ if(isset($_FILES["file"]["type"]))
             else
             {
                 $sourcePath = $_FILES['file']['tmp_name']; // Storing source path of the file in a variable
-                $targetPath = "upload/category/".$name; // Target path where file is to be stored
+                $targetPath = "upload/products/".$name; // Target path where file is to be stored
                 move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file                
                 updateProdus($_POST["id-p1"],$_POST["nume-produse"],$_POST["getIDC"], $_POST["pret-produse"],$_POST["stoc-produse"],$name,$_POST["editor1"],$conn);
-
+             //    echo "eroare, nu exista 22222";  
                // adaugare_cat($_POST['valoare-input'], $name,$conn);
             }
         }
@@ -51,10 +51,10 @@ if(isset($_FILES["file"]["type"]))
        $rezultat=$conn->query($queryP) or die ($conn->error);
        $rowPoza= mysqli_fetch_assoc($rezultat);
        $name=$rowPoza['icon'];
-    
+     //echo "eroare, nu exista poza3333";  
           
              updateProdus($_POST["id-p1"],$_POST["nume-produse"],$_POST["getIDC"], $_POST["pret-produse"],$_POST["stoc-produse"],$name,$_POST["editor1"],$conn);
-
+             mysqli_close($conn);
             }
 }
 
