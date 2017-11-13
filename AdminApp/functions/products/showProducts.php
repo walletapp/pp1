@@ -27,16 +27,16 @@ while($row= mysqli_fetch_array($result)){
 
 echo '<tr>
                   <td>'.$row['idProduct'].'</td>  
-                   <td><img style="width:50px; border-radius:50%;" src="'.$row['icon'].'"></td>
+                   <td><img style="width:50px; border-radius:50%;" src="'.LOCATIE_PRODUSE.$row['icon'].'"></td>
                    <td>'.$row['nameProduct'].'</td>
                   <td>'.$row['stock'].'</td>
                   <td>'.$row['ingrediente'].'</td>
                   <td>'.$row['price'].' Lei</td>
                    <td> 
                        <a href="?m=modificare_produs&id='.$row['idProduct'].'"class="btn btn-app">
-                <i style="font-size:14px;" class="fa fa-edit"></i> 
+                Modificare
               </a></td>  
-              <td>  <button style="float:right;" button type="button" id="'.$row['idCategory'].'" class="apasareButon btn btn-default">Ștergere</button></td>   
+              <td>  <button style="float:right;" button type="button" name="'.$row['idProduct'].'" class="stergereProd btn btn-default">Ștergere</button></td>   
                 </tr>';
 
 

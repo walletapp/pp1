@@ -28,7 +28,7 @@
                                   </div>
                                
                                   <div class="col-md-6">
-                                      <button id="btnSubmit"  style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
+                                      <button id="btnSubmit"  style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit" /><i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Modifică</i>
                                 </button> 
                                   </div>
                                                       </div>
@@ -36,7 +36,7 @@
                            </form>
                         
                   
-                   <div id="message">Stare:</div>
+                   <div id="message">Stare:Nicio actiune!</div>
                        
                    </div>
             

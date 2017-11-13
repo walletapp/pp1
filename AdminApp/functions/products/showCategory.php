@@ -34,7 +34,7 @@ echo '  <tr>
                   
                   <td>'.$row['categoryName'].'</td>
                   <td>  <a href="?m=modificare_categorie&id='.$row['idCategory'].'" style="float:right;" button type="button" class="btn btn-default">Modificare</a></td>  
-                       <td>  <button style="float:right;" button type="button" id="'.$row['idCategory'].'" class="apasareButon btn btn-default">Ștergere</button></td>   
+                       <td>  <button style="float:right;" button type="button" name="'.$row['idCategory'].'" class="stergereCat  btn btn-default">Ștergere</button></td>   
        </tr>';
 
 }

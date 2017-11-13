@@ -13,10 +13,16 @@
 
 
 function updateCategory($desc,$poza,$id,$conn){
-//    $desc = "bla1";
-//    $poza = "poza_bla";
-//    $id = 0;
 
+
+    
+    
+   
+    
+    
+    
+    
+    
     $query = 'UPDATE category SET categoryName="'.$desc.'", poza="'.$poza.'" WHERE  idCategory="'.$id.'";';
 
 
@@ -24,11 +30,11 @@ function updateCategory($desc,$poza,$id,$conn){
 
 
     if ($resultat) {
-        echo "da";
+        echo "Stare: Categorie modificată cu succes!";
     } else {
-        echo "nu";
+        echo "Stare: Eroare la modificare";
     }
 
     mysqli_close($conn);
-
+  
 }

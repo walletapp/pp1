@@ -155,7 +155,7 @@
               <!-- /.row -->
                  <div class="col-md-6" style="padding:20px;">
                   <p class="text-center">
-                    <strong>Statistici meniu</strong>
+                    <strong>Statistici produse</strong>
                   </p>
 
                   <div class="progress-group">
@@ -183,7 +183,7 @@
                 </div>
               <div class="col-md-6" style="padding:20px;">
                   <p class="text-center">
-                    <strong>Statistici meniu</strong>
+                    <strong>Statisticile utiliztorilor</strong>
                   </p>
 
                   <div class="progress-group">

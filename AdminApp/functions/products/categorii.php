@@ -26,53 +26,66 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Adăugare categorie</h4>
+        <h4 class="modal-title">Categorie nouă</h4>
       </div>
         <div class="modal-body">
           <div class="box-body">
             <div class="row">
               <div class="col-md-12">
-                <div class="form-group" >
-                  <label>Denumire categorie</label><small id="iscorectTitlu" class="label pull-right bg-red"></small>
+                <div class="form-group" >                
                   <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
-                    <div id="selectImage">
-                      <input  type="hidden" id="id-cat" name="id-cat" value="">
+                  <div class="col-md-12">                
+                  <div id="image_preview" style="width:200px; height:200px; margin:10px auto;">
+                  <img id="previewing" src="functions/images/upload/category/default-category.png" />
+                </div>
+              </div>
+               <div id="selectImage">
+                <label>
+                </label><br>
+                 <input  type="hidden" id="id-cat" name="id-cat" value="">
+                <label>Denumire categorie</label><small id="iscorectTitlu" class="label pull-right bg-red"></small>
                       <input   style="margin-bottom:10px;" id="valoare-input" type="text" name="valoare-input" class="form-control" value="">
                       <div class="row">
-                        <div class="col-md-6">
+                            <div class="col-md-4">
+                                     <button type="button"  style=" width:100%;" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times-circle" aria-hidden="true"></i>
+                                         &nbsp;Anulare</button>
+                      
+                          </div>
+                        <div class="col-md-4">
                           <label for="file" class="btn btn-block btn-default" style="margin-bottom:10px; width:100%;">
                             <i class="fa fa-upload" aria-hidden="true"></i> &nbsp;Încarcare imagine
                           </label>
                           <input type="file" name="file" id="file"/>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <button  id="btnSubmit" style="margin-bottom:10px; width:100%;" class="btn btn-block btn-default" type="submit" class="submit">
-                          <i class="fa fa-floppy-o" aria-hidden="true">&nbsp;Salvează</i>
+                          <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+&nbsp;Creează categorie</i>
                           </button>
-                        </div>
+                          </div>
+                        
                       </div>
                     </div>
                   </form>
-                <div id="message">Stare:</div>
+<!--                <div id="message">Stare:</div>-->
                 </div>
               </div>
-              <div class="col-md-12" style="text-align: center;">
-                <div id="image_preview" style="margin:20px; width:100px; height:100px; ">
-                  <img id="previewing" src="functions/images/upload/default.svg" />
-                </div>
-              </div>
+             
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Anulare</button>
-            <!-- <button type="button" class="btn btn-primary" id="btnAdauga">Adăugă</button> -->
-          </div>
+<!--          <div class="modal-footer">
+           
+             <button type="button" class="btn btn-primary" id="btnAdauga">Adăugă</button> 
+          </div>-->
         </div>
         <!-- /.modal-content -->
       </div>
       <!-- /.modal-dialog -->
   </div>
 </div>
+     <div id="dialog-stergere-cat" title="Confirmare newsletter">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Sigur doriți să ștergeți categoria?
+</div> 
 <script>
        
     
@@ -80,7 +93,13 @@
 
     $(document).ready(function (e) {
       
-
+ $(function () {
+     $("#dialog-stergere-cat").dialog({
+      autoOpen: false,
+      modal: true
+    });
+   
+  }); 
 
       $("#btnSubmit").click(function(e){
         
@@ -92,6 +111,7 @@
             e.preventDefault();
             $("#message").empty();
             $('#loading').show();
+        
             $.ajax({
               url: "functions/images/adaugare_categorie_upload.php", // Url to which the request is send
               type: "POST",             // Type of request to be send, called as method
@@ -101,16 +121,25 @@
               processData:false,        // To send DOMDocument or non processed data file it is set to false
               success: function(data)   // A function to be called if request succeeds
               {
-                $('#loading').hide();
-                $("#message").html(data);
+               
+                alert(data);
+                window.location.reload();
               }});
-            alert("send??");
+            
+           
+           
           }));
        }
      });
-        
+     
 
-// Function to preview image after validation
+ $(function () {
+     $("#dialog-stergere-cat").dialog({
+      autoOpen: false,
+      modal: true
+    });
+  
+  }); 
         $(function() {
             $("#file").change(function() {
                 $("#message").empty(); // To remove the previous error message
@@ -120,7 +149,7 @@
                 if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2])))
                 {
                     $('#previewing').attr('src','noimage.png');
-                    $("#message").html("<p id='error'>Please Select A valid Image File</p>"+"<h4>Note</h4>"+"<span id='error_message'>Only jpeg, jpg and png Images type allowed</span>");
+                    alert("<p id='error'>Please Select A valid Image File</p>"+"<h4>Note</h4>"+"<span id='error_message'>Only jpeg, jpg and png Images type allowed</span>");
                     return false;
                 }
                 else
@@ -141,4 +170,45 @@
             //$('#previewing').attr('height', '400px');
         };
     });
+    
+    
+    $('.stergereCat').click(function(){
+    var id=this.name;
+          $( "#dialog-stergere-cat" ).dialog({
+          resizable: false,
+          height: "auto",
+          width: 400,
+          modal: true,
+          autoOpen: true,
+          buttons: {
+            "Ștergere": function() {
+              $.ajax({
+                type: 'POST',
+                url: 'functions/products/stergere_categorie.php',
+                data:{"id":id},
+                beforeSend: function() { 
+                  $("#dialog-newsletter").dialog( "close" );
+                  
+                },
+                success: function(data) {
+                 
+                 // alert(data);
+                 $("#dialog-newsletter").dialog( "close" );
+               window.location.reload(); 
+                },
+                error: function(xhr) {
+                   alert(xhr.responseText);
+                },
+                complete: function(data) {
+                  // alert(data);
+                  
+                }
+              });
+            },
+            Anulare: function() {
+              $( this ).dialog( "close" );
+            }
+          }
+        });
+        });
 </script>
